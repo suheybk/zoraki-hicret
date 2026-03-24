@@ -71,6 +71,13 @@
   </div>
 
   <script>
+    // SharedArrayBuffer kontrolü: COI service worker kurulduktan sonra otomatik yenile
+    if(typeof SharedArrayBuffer==='undefined'){
+      // İlk ziyarette SW henüz kurulmamış olabilir — 2sn bekle, yenile
+      var st=document.getElementById('ld-status');
+      if(st)st.textContent='servis çalışanı kuruluyor...';
+      setTimeout(function(){location.reload();},2000);
+    }
     var TD=0;
     function resize(){
       var c=document.getElementById('canvas');

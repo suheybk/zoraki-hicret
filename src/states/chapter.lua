@@ -77,29 +77,6 @@ function ChapterState:update(dt)
     -- (ActState tamamlandığında bu state'e mesaj gönderir)
     -- Bu ChapterState.onActComplete() üzerinden gelir
 
-  elseif self.phase == "outro" then
-    if self.timer >= 2.0 then
-      -- Bölümü tamamla
-      SaveSystem.completeChapter(self.chapter_id)
-
-      -- Bir sonraki bölümün kilidini aç
-      local chapter_order = { "gaza", "uyghur", "rohingya", "syria", "yemen", "kashmir" }
-      for i, ch in ipairs(chapter_order) do
-        if ch == self.chapter_id and chapter_order[i + 1] then
-          SaveSystem.unlockChapter(chapter_order[i + 1])
-          break
-        end
-      end
-
-      -- Oyuncu durumunu kaydet
-      local state = self.engine:getState()
-      state._act_index = self.act_index
-      SaveSystem.saveChapterState(self.chapter_id, state)
-      StateManager.switch("outcome", {
-        chapter_id = self.chapter_id,
-        state      = self.engine:getState(),
-      })
-    end
   end
 end
 
@@ -144,12 +121,25 @@ end
 --- Act tamamlandığında ActState'ten çağrılır
 function ChapterState:onActComplete(result)
   -- result: { act_id, outcome, state }
-  self.act_index = self.act_index + 1
+  if self.act_index >= #self.act_list then
+    -- Tüm act'lar bitti — doğrudan sonuç ekranına geç
+    SaveSystem.completeChapter(self.chapter_id)
 
-  if self.act_index > #self.act_list then
-    -- Tüm act'lar bitti
-    self.phase = "outro"
-    self.timer = 0
+    local chapter_order = { "gaza", "uyghur", "rohingya", "syria", "yemen", "kashmir" }
+    for i, ch in ipairs(chapter_order) do
+      if ch == self.chapter_id and chapter_order[i + 1] then
+        SaveSystem.unlockChapter(chapter_order[i + 1])
+        break
+      end
+    end
+
+    local state = self.engine:getState()
+    state._act_index = self.act_index
+    SaveSystem.saveChapterState(self.chapter_id, state)
+    StateManager.switch("outcome", {
+      chapter_id = self.chapter_id,
+      state      = self.engine:getState(),
+    })
   else
     self:_startNextAct()
   end
@@ -158,8 +148,8 @@ end
 function ChapterState:_startNextAct()
   self.act_index = self.act_index + 1
   if self.act_index > #self.act_list then
-    self.phase = "outro"
-    self.timer = 0
+    -- Güvenlik: bu duruma düşmemeli ama düşerse sonuç ekranına git
+    self:onActComplete({})
     return
   end
   local act_info = self.act_list[self.act_index]
