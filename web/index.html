@@ -71,13 +71,6 @@
   </div>
 
   <script>
-    // SharedArrayBuffer kontrolü: COI service worker kurulduktan sonra otomatik yenile
-    if(typeof SharedArrayBuffer==='undefined'){
-      // İlk ziyarette SW henüz kurulmamış olabilir — 2sn bekle, yenile
-      var st=document.getElementById('ld-status');
-      if(st)st.textContent='servis çalışanı kuruluyor...';
-      setTimeout(function(){location.reload();},2000);
-    }
     var TD=0;
     function resize(){
       var c=document.getElementById('canvas');
@@ -131,8 +124,45 @@
       Module.setStatus=function(t){if(t)console.error(t);};
     };
     function applicationLoad(){Love(Module);}
+
+    // SharedArrayBuffer / Cross-Origin Isolation kontrolü
+    // COI service worker ilk ziyarette kurulur, sayfa yenilenmesi gerekir.
+    // love.js'i yalnızca izolasyon sağlandığında yükle.
+    (function(){
+      var st=document.getElementById('ld-status');
+      if(window.crossOriginIsolated){
+        // İzolasyon aktif — oyunu yükle
+        var gs=document.createElement('script');
+        gs.src='game.js';
+        gs.onload=function(){
+          var ls=document.createElement('script');
+          ls.src='love.js';
+          ls.async=true;
+          ls.onload=function(){applicationLoad();};
+          document.body.appendChild(ls);
+        };
+        document.body.appendChild(gs);
+      } else {
+        // SW henüz aktif değil — kurulmasını bekle, sonra yenile
+        if(st) st.textContent='servis çalışanı kuruluyor...';
+        // SW controllerchange olayını dinle
+        if(navigator.serviceWorker){
+          navigator.serviceWorker.ready.then(function(){
+            // SW aktif ama sayfa henüz kontrol altında değil — yenile
+            if(!window.crossOriginIsolated){
+              setTimeout(function(){location.reload();},500);
+            }
+          });
+          // Yedek: 3 saniye sonra yine dene
+          setTimeout(function(){
+            if(!window.crossOriginIsolated) location.reload();
+          },3000);
+        } else {
+          // Service worker desteği yok
+          if(st) st.textContent='tarayıcınız bu oyunu desteklemiyor — Chrome veya Firefox kullanın';
+        }
+      }
+    })();
   </script>
-  <script type="text/javascript" src="game.js"></script>
-  <script async type="text/javascript" src="love.js" onload="applicationLoad()"></script>
 </body>
 </html>
