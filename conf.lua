@@ -15,8 +15,10 @@ function love.conf(t)
   t.window.minwidth     = 320
   t.window.minheight    = 240
   t.window.vsync        = 1
-  t.window.msaa         = 2
-  t.window.highdpi      = true
+
+  -- Pixel art oyununda MSAA gereksiz, web uyumluluğu için kapalı
+  t.window.msaa     = 0
+  t.window.highdpi  = false
 
   -- Kullanılmayan modülleri kapat (performans)
   t.modules.joystick  = false
