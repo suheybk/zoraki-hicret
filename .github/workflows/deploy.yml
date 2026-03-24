@@ -1,0 +1,70 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install love.js
+        run: npm install -g love.js
+
+      - name: Create .love package
+        run: |
+          zip -9 -r hicret.love . \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "web/*" \
+            --exclude "*.sh" \
+            --exclude "*.zip" \
+            --exclude "*.love" \
+            --exclude "*.md" \
+            --exclude "build_web/*"
+          echo "Package size: $(du -sh hicret.love | cut -f1)"
+
+      - name: Build with love.js
+        run: |
+          love.js hicret.love dist --title "Hicret" --memory 67108864
+          ls -lh dist/
+
+      - name: Apply custom web files
+        run: |
+          cp web/index.html dist/index.html
+          cp web/coi-serviceworker.min.js dist/coi-serviceworker.min.js
+          echo "Custom files applied"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,51 @@
+{
+  "gaza": {
+    "act1": {
+      "morning_start": "Sabah ezanı henüz susmuş. Sokakta çocuklar oynuyor — her zamanki gibi görünüyor, ama her şey her zaman olduğundan daha kırılgan.\n\nBu Gazze. Abluka altında 16. yıl.",
+      "mother_calls": "Evlat, bugün pazara çıkacak mısın? Dükkânda ekmek kalmadı. Ya da biraz dinlen — yorulmuş görünüyorsun. Haberlere de bakabilirsin, belki bir şey vardır...",
+      "choice_go_market": "Pazara gidip ekmek alayım",
+      "choice_stay_home": "Evde kal, çocukla vakit geçir",
+      "choice_check_news": "Önce haberlere bakayım",
+      "market_scene": "Pazar tezgâhları dolu ama fiyatlar dün değil. Bir litre yağ haftalık bütçenin dörtte biri. İnsanlar alıyor — hayat devam ediyor çünkü başka seçenek yok.",
+      "neighbor_talks": "Dur bir dakika! Duydun mu? Dün gece Refah'ta 12 kişi... Çocuklar da varmış aralarında. Haberler yazmıyor tabii, ama ben bilirim — kardeşim orada.",
+      "choice_listen_neighbor": "Dur, anlat",
+      "choice_hurry_back": "Üzgünüm, acelem var",
+      "neighbor_story": "Biliyorsun, burada her aile birini kaybetti. Ama dünya görmüyor. Şimdi bana bir söyle: onlar bizi 'çatışma bölgesi' diye yazarken, ben mi savaşçıyım, çocuğum mu savaşçı?\n\nDirenişin adı bu.",
+      "home_scene": "Oturma odasında çocuğun renk renk çizmişler duvara — okul projesi. Mutlu görünüyor. Sormadan önce sormak geliyor içinden.",
+      "child_asks": "Baba/Anne, bugün okulda dediler ki başka ülkelerde çocuklar her gün okula gidebiliyor. Neden biz bazen gidemiyoruz? Neden işık gidiyor bazen?",
+      "choice_tell_truth": "Zor bir dünyada yaşıyoruz, canım. Ama sen güçlüsün.",
+      "choice_comfort_child": "Çok yakında her şey daha iyi olacak. Söz.",
+      "truth_response": "Çocuğun gözleri büyüdü. Anlamak istiyor ama henüz çok küçük. Ya da belki anlıyor ve sadece senin güçlü durmanı bekliyor.\n\nHangisi daha ağır?",
+      "comfort_response": "Gülümsüyor. Ve o gülümseme sana yeter — bugün için. Yarın yine sorarsa ne diyeceksin bilmiyorsun. Ama bu an gerçek.",
+      "news_scene": "Ekran açılıyor. Üst üste görüntüler — hepsi tanıdık coğrafyalar, tanıdık acılar. Rakamlar akıyor: kayıp sayısı, enkaz sayısı, yardım beklenen gün sayısı.",
+      "news_header": "\"Bölgede gerilim sürüyor\" — bu cümle on yıldır değişmedi. Gerilim değil, hayat sürüyor. Ve ölüm.\n\nKanalı kapat. Ekmek almak gerek.",
+      "day_end": "Akşam oldu. Aile sofrada — ekmek var, zeytin var. Küçük bir şükür anı. Dışarıda çocuklar hâlâ oynuyor.\n\nSonra işık gitti.",
+      "electricity_cut": "Her gün ortalama 4 saat elektrik. Abluka 2007'den beri sürüyor. BM, nüfusun %97'sinin içme suyu imkânından yoksun olduğunu raporluyor.\n\nBu bir kaza değil. Bu bir politika.",
+      "act1_end": "Karanlıkta mum yakarken düşünüyorsun: bu gece geçer. Ama ne kadar daha?"
+    },
+    "act2": {
+      "rupture_start": "Üç gün sonra. Sabahın erken saatlerinde.",
+      "bombing_nearby": "Patlamalar yakın. Pencereler titredi. Çocuk ağlamaya başladı.\n\nKomşunun evi — bir dakika önce orada duruyordun.",
+      "father_speaks": "Artık burada kalamayız. Ama nereye? Kuzey kapandı. Güney dolu. Para azaldı. Ve pasaportumuz...",
+      "choice_flee_north": "Hemen çıkalım, bir yol buluriz",
+      "choice_stay_shelter": "Binadaki sığınağa inelim",
+      "choice_help_neighbor_first": "Önce komşuyu kurtaralım",
+      "flee_north_result": "Sokaklar insanla dolmuş. Herkes bir yere koşuyor. Çocuğu kucağına aldın, çantada en önemli belgeler var — doğum cüzdanları, nikah kâğıdı.\n\nKapı numaraları geçerken düşündün: bu evlerin hangisi yarın hâlâ ayakta olacak?",
+      "shelter_result": "Bodrum soğuk ve karanlık. On iki kişi burada. Komşu yaşlı kadın dua ediyor sessizce. Çocuklar birbirine bakıyor.\n\nDışarıda sesler sürüyor. Saatler geçiyor.",
+      "help_neighbor_result": "Komşunu buldun — yaralı değil ama şokta. Onu yanına aldın. Bu beş dakika senin kararındı.\n\nBazen insanlık böyle küçük kararlarla ayakta kalır.",
+      "network_reveal": "Bu olayları mümkün kılan ağa bakıyorsun.\n\nABD, 2023 yılında İsrail'e 14.1 milyar dolarlık acil savunma yardımı talep etti. Boeing ve Raytheon bu operasyonda kullanılan hassas güdümlü sistemlerin üreticisi. Her biri halka açık borsalarda işlem görüyor.",
+      "network_detail": "BM Güvenlik Konseyi'nde Filistin lehine alınan her ateşkes kararı, ABD'nin tek bir vetosuyla engellendi.\n\nBatı medyasının büyük bölümü 'çatışma' dedi — savaş değil. 'Kayıp' dedi — öldürülen değil. Dil bir silah.\n\nJPMorgan, RTX (Raytheon) hisselerinin en büyük kurumsal yatırımcılarından biri.",
+      "act2_end": "Rakamlar insanı küçültüyor bazen. Ama şunu bil: bu rakamlarda sen de varsın. Tanıklık etmek de bir direniş biçimidir."
+    },
+    "act3": {
+      "migration_start": "Refah Sınır Kapısı. Binlerce kişi sırada. Bazıları günlerdir bekliyor.\n\nElinde belgeler var. Ya da yoktu — bazıları enkaz altında kaldı.",
+      "border_wait": "Sıra ilerliyor ama yavaş. Yanındaki genç kadının bebeği ağlıyor, süt bitmiş. Çantanda biraz bisküvi var. Az da olsa.",
+      "choice_share_food": "Bisküvileri ver",
+      "choice_conserve": "Kendi çocuğuna sakla",
+      "share_food_result": "Kadın gözleriyle teşekkür etti. Sözle değil — Arapçası farklı, belki Sudanlı.\n\nBir yardım görevlisi yaklaştı: 'Sizi önce geçirebilirim, aileli ve hasta öncelikli.' Paylaşım seni görmüş.",
+      "conserve_result": "Çocuğun ihtiyacı var. Kimse seni yargılamaz. Ama o anın ağırlığını taşıyacaksın.\n\nKuyruk devam ediyor. Güneş batıyor.",
+      "crossing_moment": "Kapıdan geçerken arkana döndün.\n\nHer şeyi bırakmak zorunda kaldın. Evi. Komşuyu. Mezarları. O çocukluk bahçesini.\n\nBu hicret. Zorunlu, yürek parçalayan, ve dünyada 120 milyonun gerçeği.",
+      "act3_end": "━━━ BÖLÜM SONA ERDİ ━━━\n\nGazze. 2,3 milyon insan. %70'i yerinden edildi. Dünyanın en yoğun nüfuslu alanlarından biri.\n\nArşive geç. Gerçek belgeler seni bekliyor."
+    }
+  }
+}

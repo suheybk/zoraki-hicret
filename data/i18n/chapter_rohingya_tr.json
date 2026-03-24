@@ -1,0 +1,105 @@
+{
+  "rohingya": {
+    "act1": {
+      "village_dawn": "Rakhine eyaleti, Myanmar. Sabah sisi neme karışmış kıyı ovasında.\n\nAdın Nur. Balıkçısın. Karın Amina evde, iki çocuğun var — küçük Rashid beş yaşında. Burası atalarından kalma toprak.\n\nAma senin için kimlik kartın yok. 1982 Vatandaşlık Kanunu'na göre Rohingya, Myanmar'ın 135 tanınan etnik grubundan biri değil. Resmi olarak: Hiçbir yere ait değilsin.",
+
+      "identity_card": "Cebinde bir kağıt var — 'Geçici Kayıt Belgesi.' Vatandaşlık kartı değil. Seyahat yasağı, eğitim kısıtı, evlilik için izin gerekliliği. Hayatın bu belgeye sığmıyor.",
+
+      "card_choice_prompt": "Kontrol noktasındaki asker seni durduruyor. 'Kimlik' diyor.\n\nNe yaparsın?",
+      "choice_show_card": "Geçici belgeyi uzat",
+      "choice_hide_card": "Sakla, ilerle — bak ne diyecek",
+
+      "show_card_result": "Belgeyi gördü. Yüzündeki ifade değişti — önce aşağılama, sonra bir şeyleri not etme hevesi.\n\n'Bengalli,' dedi. Yanlış. Ama düzeltirsek ne olur?",
+      "hide_card_result": "Saklamayı seçtin. Bu sefer sorunsuz geçtin. Bu sefer.",
+
+      "market_scene": "Çarşı. Rakhine budist tüccarlar ayrı, Rohingyalar ayrı. İki toplum aynı pazarda, ayrı kurallarla yaşıyor. Sana satmak istemeyenler var — bu eski bir düşmanlık değil. Örgütlenmiş bir ayrıştırma.",
+
+      "mosque_scene": "Cami. Küçük, ahşap, minaresi yıkık. Namaz sessiz kılındı.\n\nIraklı bir âlim bir zamanlar şunu demişti: 'Yeryüzünde en çok acı çeken insan Rohingya.' BM o sözü onayladı. Ama onaylayan dünya hâlâ burada değil.",
+
+      "elder_speaks": "Dinle Nur. Gece 11'den sonra kalkma. Orman yakınına gitme. Ve eğer bir gün ateş görürsen — kaç. Bekle, dua et ama kaç.",
+
+      "elder_choice_prompt": "Yaşlı adam ne biliyor?",
+      "choice_trust_elder": "Daha fazla sor — onu dinle",
+      "choice_doubt_elder": "Abartıyor olabilir",
+
+      "elder_route_info": "Bangladeş sınırı. Naf nehri. Gece geçilir. Karşıda Cox's Bazar var. Oradan tekne var Malezya'ya. Hepsi para ister. Ama hayat bedavaya gelmiyor.",
+      "doubt_elder": "Belki haklıydın. Belki her şey iyidir. İnsan korku içinde yaşamak istemez. Ama bazen korku erken uyarıdır.",
+
+      "evening_fire": "Ateş başında aile. Amina pirinç pişiriyor. Rashid sorular soruyor — her çocuk gibi, durmadan.",
+
+      "child_question": "Baba, biz neden diğer çocuklar gibi okula gidemiyoruz?",
+
+      "child_answer_prompt": "Bu soru uzun süredir içinde bekleyen bir şeydi. Ne diyeceksin?",
+      "choice_explain_truth": "Dünyada haksızlıklar var, ama sen değerlisin. Bir gün değişecek.",
+      "choice_protect_child": "Henüz küçüksün. Zamanı gelince anlarsın.",
+
+      "explain_truth": "Gözleri büyüdü. Anlamak için çok küçük ama hissetti — sesin ciddiyetini, annenin sessizliğini, ateşin sıcaklığını.\n\nBazen gerçeği çocuklara söylemek, onları korumaktan daha cesur bir eylemdir.",
+      "protect_child": "Gülümsedi, başka bir şey sordu. Belki de iyi. Belki zamanla anlayacak.",
+
+      "act1_end": "Gece. Rashid uyuyor. Amina duvar kenarında dua ediyor. Sen gökyüzüne bakıyorsun.\n\n1,3 milyon Rohingya bu topraklarda yaşıyor — ya da yaşıyordu. Hepsinin hikâyesi seninkine benziyor."
+    },
+
+    "act2": {
+      "fire_at_night": "Gece 01:30. Kuzeyden kırmızı bir ışık.\n\nOrman yanıyor değil. Köy yanıyor.\n\nUyanıyorsun. Amina zaten uyanmış — bakışları her şeyi söylüyor.",
+
+      "flee_village": "Çarçabuk: Rashid'i al. Amina çocuğu sardı. Kapıdan çıkmadan önceki son saniye — eve baktın.\n\nBir daha görmeyebilirsin.",
+
+      "flee_choice_prompt": "Komşu yaşlı adam kapıda yere düşmüş, ayağı yaralı. Onlara da zaman yetmiyor sana.",
+      "choice_take_neighbor": "Yaşlıyı al, birlikte kaç",
+      "choice_flee_alone": "Ailenle git — her saniye önemli",
+
+      "take_neighbor": "Omuzuna aldın. Ağırdı. Amina başka tarafından tuttu.\n\nYavaş ilerlediler ama birlikteydiler. Ve o yaşlı adam dua ediyordu — sessiz, ama sürekli.",
+      "flee_alone": "Koştunuz. Arkana bakma isteği vardı ama dönemedin. Bu ağırlık uzun süre taşınacak.",
+
+      "forest_path": "Orman yolu. Gece tam karanlık. Çocuk ağlamıyor — belki korkudan, belki bildi.\n\nSaatler geçti. Ayaklarınız yaralı. Naf nehri yakın.",
+
+      "network_reveal_1": "Bu yangınların arkasında —",
+
+      "bangladesh_border": "Nehri geçtiniz. Bangladeş tarafı. Ama karşılama yok.\n\nAsker. Silah. 'Geri gidin' diyor.",
+      "border_guard_speaks": "Burası Bangladeş. Sizi almıyoruz. Myanmar meseleniz Myanmar ile konuşun.",
+      "bribe_choice_prompt": "Elinde para var. Az ama var. Ne yapacaksın?",
+      "choice_pay_bribe": "Parayı uzat, geçmeye çalış",
+      "choice_plead": "Yalvar — bir baba olarak konuş",
+
+      "pay_bribe": "Para el değiştirdi. Asker bir kenara çekildi.\n\nBu utanç verici. Ve bu sefil anı hatırlayacaksın. Ama Rashid ötede.",
+      "plead_result": "Asker uzun baktı. Sonra bir şeyler duydu — telsizinden. Çekti gitti.\n\nBelki tesadüf. Belki bir şeylerin karıştığını bildi. Geçtiniz.",
+
+      "camp_arrival": "Cox's Bazar — dünyanın en kalabalık mülteci kampı. 2023'te 900.000'i aşkın insan. Plastik tenteler, çamurlu yollar, bitmek bilmeyen kuyruklar.\n\nBurası güvenli mi? Kesin değil. Ama yanmıyor.",
+
+      "network_reveal_2": "Ve dünya nerede?",
+
+      "act2_end": "Kamp ateşlerin olmadığı bir yer. Ama yurt değil.\n\nBuradaki herkes gitmeyi düşünüyor. Malezya. Endonezya. Avustralya. Hepsi denizin öte tarafında."
+    },
+
+    "act3": {
+      "camp_life": "Dokuz ay. Kamp dokuz ay. Rashid büyüdü — ama okul yok. Amina hastalandı — ama ilaç az. Sağlanan yardım günden güne kısıtlanıyor.\n\nKaçakçılar her gece kampın etrafında.",
+
+      "smuggler_offer": "Malezya'ya tekne var. Üç günlük yol. Kişi başı 800 dolar. Ama ben 500'e yaparım — aileni alırım. Söz.",
+
+      "smuggler_choice_prompt": "Söz bu adamın ağzından çıktı. Kaç kişi bu sözü tutmadı bilmiyorsun.",
+      "choice_accept_boat": "Kabul et — denizin öte tarafı her şeyden iyi",
+      "choice_wait_unhcr": "BMMYK yeniden yerleştirme listesini bekle",
+
+      "accept_boat": "Gece yarısı sahil. Otuz kişi küçük bir teknede. Sen, Amina, Rashid.\n\nDeniz sakin görünüyor. Ama göründüğü gibi değil.",
+
+      "wait_unhcr": "Sıra numarası aldın: 47.832. BMMYK yetkilisi baktı dosyaya.\n\n'Maalesef bu yıl kontenjanı dolduruldu. Bir sonraki dönem başvurun.'",
+      "unhcr_result": "Sıra beklerken üç ay geçti. Rashid hastalandı, geçti. Amina iyileşti. Para eridi. Tekne hâlâ var.",
+
+      "on_the_sea": "Andaman Denizi. Birinci gün: ufuk çizgisi. İkinci gün: güneş kavurucu. Üçüncü gün: su bitti.",
+
+      "sea_crisis": "Rashid ağlıyor. Su yok. Bir kadın şişirilmiş bir su torbasını saklıyor — onun da çocukları var.\n\nSen ne yaparsın?",
+      "sea_choice_prompt": "Az kalan suya kimin hakkı var?",
+      "choice_share_water": "Kadına dön, paylaşmayı teklif et",
+      "choice_save_family": "Aileni koru — bu herkesin görevi",
+
+      "share_water": "Kadın baktı. Sonra başını salladı.\n\nPaylaştınız. Rashid biraz içti, kadının çocukları biraz içti. Kimse tokluk hissetmedi. Ama herkes gördü.\n\nDenizin ortasında insan kalmak — bu da bir direniş.",
+      "save_family": "Rashid'e verdin. Amina birkaç damla içti. Yetmedi.\n\nGün bitmeden kadın ve çocukları su istedi. Bu sefer geriye su yoktu.",
+
+      "land_sighted": "Dördüncü gün. Bir şey görüldü.\n\n'Kara! Kara var!' diye bağırdı biri. Herkes ayağa kalktı. Tekne sallandı. Ama önemli değildi.",
+
+      "malaysia_shore": "Malezya kıyısı. Polis tekneleri karşıladı.\n\nBelgesiz giriş suç. Ama sizi geri çevirmediler — bu sefer.\n\nKamptan, prosedürden, kayıttan önce şunu yaptın: Rashid'i kucakladın. Deniz kokusu üstünde. Tuzlu, ter kokan ellerin sıkıca tuttu.",
+
+      "act3_end": "━━━ BÖLÜM SONA ERDİ ━━━\n\nMalezya'da 180.000'den fazla kayıtlı Rohingya mültecisi var. Kayıtsızlar dahil tahmin çok daha fazla.\n\nMalezya BMMYK'nin mülteci statüsünü tanıyor, ama Rohingya mültecilerinin çalışma, eğitim ve sağlık hakları hâlâ ciddi biçimde kısıtlı.\n\nArşive geç."
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "syria": {
+    "act1": {
+      "aleppo_morning": "Halep. 2013.\n\nAdın Tarık. Çalışan, doktor değil ama yardımcısı. İki çocuğun var — Rima dokuz, Sami yedi. Karın Leila evde.\n\nAleppo bir zamanlar dünyanın en eski şehirlerinden biriydi. Hâlâ öyle sayılıyor. Sokakları şimdi farklı konuşuyor ama.",
+
+      "family_breakfast": "Sabah kahvaltısı. Ekmek, zeytin, peynir. Radyo açık — haberler. Her gün biraz daha sert. Her gün biraz daha yakın.\n\nSami okuldaki arkadaşından bahsediyor. Rima defterine bir şeyler çiziyor. Leila sana bakıyor — bakışında bir soru.",
+
+      "phone_call": "Telefon çaldı. Kardeşin Yusuf.\n\n'Bugün çarşıya gitme Tarık. Duyumlar var — gece saldırı olabilir. Yiyecek alan varsa dün alsın.'",
+
+      "call_choice_prompt": "Ne yaparsın?",
+      "choice_go_market": "Git — aileni aç bırakamazsın",
+      "choice_stay_home": "Kal — risk almaya değmez",
+
+      "go_market": "Çarşı hareketli. Herkes bir şeyler alıyor — sanki duyumsanmış bir son gün gibi. Fırından ekmek, tüpgaz, su.",
+
+      "market_bombing": "Patlama.\n\nÇarşının doğu tarafı. Birkaç saniye sonra ikincisi.\n\nYere yattın. Toz, cam sesi, bağırmalar. Yanındaki adam devrildi.",
+
+      "after_bombing": "Kalktın. Yaralı değilsin. Yanındaki adam — omzundan kan akıyor. Senin almak istediğin ekmek yerde, un içinde.",
+
+      "help_choice_prompt": "Adam yardım istiyor. Çocukların evde.",
+      "choice_help_wounded": "Dur, adama yardım et",
+      "choice_run_home": "Eve koş — çocuklara yetişmek zorundasın",
+
+      "help_wounded": "Yırttın gömleğini, sardın. Başkası da geldi yardıma. Bir kadın cep telefonuyla ambulans çağırdı.\n\nYarım saat sonra eve ulaştın. Rima kapıda bekliyordu.",
+      "run_home": "Koştun. Patlama sesi hâlâ kulakta. Eve girdiğinde Leila çocukları köşeye çekmiş, bekliyordu.",
+
+      "stay_home_scene": "Eve kaldın. Patlama sesini uzaktan duydun — gök gürültüsüne benziyordu ama değildi.\n\nLeila ellerini kavradı. Radyo kesildi.",
+
+      "home_reunion": "Akşam. Aile tamam, evde. Ama şehir eksik.",
+
+      "brother_question": "Tarık — Yusuf Şam'a geçmeyi düşünüyor mu? Duydum askerlik çağrısı var, kaçınanları arıyorlar.",
+
+      "brother_choice_prompt": "Komşu soruyor ama kim dinliyor bunu?",
+      "choice_hide_brother": "'Yusuf burada değil, ailesindeydi' de",
+      "choice_no_brother_here": "'Bilmiyorum nerede' de",
+
+      "hide_brother": "Korudun. Komşu başını salladı — inanıp inanmadığını bilmiyorsun. Ama şimdilik geçti.",
+      "no_brother": "Boş bir cevap. Komşu tatmin olmadı gibi göründü. Bu şehirde herkes bir şey biliyor.",
+
+      "night_scene": "Gece. Çocuklar uyudu. Leila ile balkondayken baktınız şehre.\n\nBir yerde ateş yanıyor. Uzakta. Bugün değil ama yarın daha da yakın olabilir.",
+
+      "act1_end": "Aleppo bu gece de hayatta. Ama hayatta kalmak ile yaşamak farklı şeyler.\n\nHer sabah bir soruyla uyanıyorsun: Bugün mü?"
+    },
+
+    "act2": {
+      "barrel_bomb": "Varil bombası.\n\nHava saldırısı değil — bu daha ilkel, daha yakın. Bir helikopterden metal namlu içinde patlayıcı. Akıllı güdüm yok. İsabet hesabı yok. Düştüğü yerde patlıyor.",
+
+      "rubble_escape": "Binanın yarısı yıkıldı. Çocuklar komşunun katındaydı — üst kat. Sen aşağıdaydın.\n\nToz içinde sesi duydun: Rima ağlıyor. Canlı. Leila canlı. Ama Sami ses vermiyor.",
+
+      "family_separated": "Enkaz. Sami orada bir yerde. Çıkış yolu kapandı. Dışarıdan sesler — insanlar geliyor ama zamanla yarışıyorsun.",
+
+      "search_choice_prompt": "Ne yaparsın?",
+      "choice_search_rubble": "Tek başına kaz — her saniye önemli",
+      "choice_flee_now": "Çıkış varken çık — belki kurtarma ekibi gelir",
+
+      "search_rubble": "Kazdın. Ellerin kanıyordu. Beton parçalar.\n\nYirmi dakika sonra buldu Sami'yi — bilinçsiz, soluk var, kolu kırık. Ama var.",
+      "found_result": "Çıkardın. Beyaz Miğferler geldi — gönüllü kurtarma ekibi. Sami'yi aldılar. 'Yaşayacak' dediler.",
+
+      "flee_now": "Çıktınız. Sami içeride.\n\nBeyaz Miğferler saatlerce çalıştı. Sami'yi buldular — sağ. Ama o saatler senden çaldı.",
+
+      "network_reveal_war": "Bu varil bombaları kim üretiyor, kim kullanıyor?",
+
+      "message_to_brother": "Telefon. Yusuf'tan mesaj: 'Şam'dan ayrıldım. İzmir yolundayım. Sen de gel Tarık.'\n\nSen de git istiyorsun. Ama nasıl?",
+
+      "message_choice_prompt": "Yusuf'a cevap ver.",
+      "choice_send_location": "Nerede olduğunu söyle, buluşma noktası belirle",
+      "choice_go_silent": "Sessiz kal — bilmese daha güvenli",
+
+      "send_location": "Mesaj gitti. Yusuf iki saat sonra yazdı: 'İzmir'de seni beklerim. Batı Limanı yakınında bir han var.'\n\nBu bir plan. Belirsiz ama plan.",
+      "go_silent": "Telefonu kapattın. Belki daha güvenli. Ama şimdi daha da yalnız hissediyorsun.",
+
+      "road_to_turkey": "Halep'ten Türkiye sınırına. Kontrol noktaları, para, yollar kapalı.\n\nÜç gün sürdü. Beş farklı araç. İki sınır geçişi. Bir gece çukurda bekleme.\n\nTürkiye'ye girdiniz.",
+
+      "network_reveal_veto": "BM bu süreçte neredeydi?",
+
+      "act2_end": "Suriye'den kaçan 6,8 milyon insan var. Türkiye 3,5 milyonuyla dünyada en fazla Suriyeli barındıran ülke.\n\nAma burası da geçici. Önünüzde Avrupa var — ya da o düşünce."
+    },
+
+    "act3": {
+      "turkey_arrival": "İzmir. Ege kıyısı.\n\nYusuf kapıda bekliyordu — sarıştınız. Aylardır. Rima ağladı. Sami kolu askıda, sessiz gülümsedi.\n\nBu buluşma gerçekti.",
+
+      "istanbul_camp": "Ama İzmir kalınacak yer değil. Her gece kaçakçılar sahilde. Her sabah haber: 'tekne döndü,' 'tekne battı,' 'tekne karaya çıktı.'\n\nGözlerin sahile kayıyor.",
+
+      "route_debate": "Leila 'gitmeyelim' diyor. Çocuklar için.\n\nYusuf 'kalırsak ne olur' diyor. Türkiye'de Suriyelilere iş yok, okul zor, süreklilik belirsiz.\n\nSen ortadasın.",
+
+      "route_choice_prompt": "Yol seç.",
+      "choice_aegean_boat": "Ege'yi geç — Yunanistan'a tekneyle",
+      "choice_land_route": "Kara yolu — Bulgaristan sınırı üzerinden",
+
+      "aegean_boat": "Gece. Sahil. Otuz beş kişi şişme botun etrafında. Kaçakçı anlatıyor: 'Üç saat. Lezbos adası. Kolay.'\n\nKolay demek istediklerinde kolay olmadığını artık biliyorsun.",
+      "land_route": "Orman. Gece. Dedektör köpekler. Dört kez durduruldunuz, iki kez geri gönderildiniz.\n\nÜçüncü denemede geçtiniz — ama yedi gün sürdü.",
+
+      "boat_night": "Deniz. Rima elleriyle iki yanı tutuyor. Sami hiç ses çıkarmıyor. Leila dua ediyor — sesini duyuyorsun.\n\nBot şişkin. Çok fazla kişi. Motor ses çıkardı.",
+
+      "life_vest_prompt": "Bir aile var yanınızda — küçük çocuk, yedi sekiz yaşında, yeleği yok. Annesi yalvarıyor.\n\nSenin fazladan yeleklerinden biri var.",
+      "choice_give_vest_child": "Yeleği çocuğa ver",
+      "choice_keep_vest": "Sakla — kendi çocuklarını düşünürsün",
+
+      "give_vest": "Uzattın. Kadın bakışlarıyla teşekkür etti — o an bir şey geçti aranızda.\n\nSuriyeliler, Afganlar, Somalililer — denizin ortasında hepsi aynı insanlık içinde. Yelekler değil, bakışlar taşıdı o çocuğu.",
+      "keep_vest": "Tuttun. Leila seni gördü. Bir şey söylemedi. Ama o bakış —\n\nDeniz her ikisini de tuttu. Ama bir şeyi bıraktın orada.",
+
+      "greece_shore": "Lezbos. Sabahın soluk ışığında kıyı.\n\nBiri 'Yunanistan!' diye bağırdı. Rima ağladı. Sami elini tuttu senin.\n\nSuya adım atarken — kum altında ayaklarını hissettin.",
+
+      "brother_reunion": "Kıyıda Yusuf bekliyordu. Mesajı almıştı — gelmişti. Sarılırken arkandan bakıyordu denize.\n\n'Geldik,' dedi sadece.",
+
+      "act3_end": "━━━ BÖLÜM SONA ERDİ ━━━\n\n2011'den bu yana Suriye'den 6,8 milyon kişi yurt dışına kaçtı.\n2015'te Ege'yi geçmeye çalışırken 800'den fazla kişi boğuldu.\n\nAlan Kurdi — üç yaşında, Suriyeli — Eylül 2015'te Bodrum sahilinde bulundu. Dünya bir anlığına durdu.\n\nSonra devam etti.\n\nArşive geç."
+    }
+  }
+}

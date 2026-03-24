@@ -1,0 +1,521 @@
+{
+  "id": "uyghur",
+  "title_key": "region.uyghur.name",
+  "acts": [
+    {
+      "id": "act_1_life",
+      "type": "life",
+      "entry": "morning_prayer",
+      "nodes": [
+        {
+          "id": "morning_prayer",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.morning_prayer",
+          "next": "prayer_choice"
+        },
+        {
+          "id": "prayer_choice",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.prayer_choice",
+          "choices": [
+            {
+              "text_key": "uyghur.act1.choice_pray_quietly",
+              "next": "quiet_prayer",
+              "effects": {
+                "morale": 8,
+                "trust": -3
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "prayed",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "uyghur.act1.choice_skip_prayer",
+              "next": "skip_prayer",
+              "effects": {
+                "morale": -10,
+                "trust": 3
+              }
+            }
+          ]
+        },
+        {
+          "id": "quiet_prayer",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.quiet_prayer",
+          "next": "phone_check"
+        },
+        {
+          "id": "skip_prayer",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.skip_prayer",
+          "next": "phone_check"
+        },
+        {
+          "id": "phone_check",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.phone_check",
+          "next": "phone_choice"
+        },
+        {
+          "id": "phone_choice",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.phone_choice_prompt",
+          "choices": [
+            {
+              "text_key": "uyghur.act1.choice_delete_contacts",
+              "next": "deleted_contacts",
+              "effects": {
+                "trust": 5,
+                "morale": -8
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "contacts_deleted",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "uyghur.act1.choice_keep_contacts",
+              "next": "kept_contacts",
+              "effects": {
+                "morale": 5,
+                "trust": -8
+              }
+            }
+          ]
+        },
+        {
+          "id": "deleted_contacts",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.deleted_contacts",
+          "next": "street_scene"
+        },
+        {
+          "id": "kept_contacts",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.kept_contacts",
+          "next": "street_scene"
+        },
+        {
+          "id": "street_scene",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.street_scene",
+          "next": "checkpoint"
+        },
+        {
+          "id": "checkpoint",
+          "speaker": "soldier",
+          "text_key": "uyghur.act1.checkpoint_speak",
+          "next": "checkpoint_choice"
+        },
+        {
+          "id": "checkpoint_choice",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.checkpoint_narration",
+          "choices": [
+            {
+              "text_key": "uyghur.act1.choice_comply",
+              "next": "comply_result",
+              "effects": {
+                "trust": 5,
+                "morale": -12
+              }
+            },
+            {
+              "text_key": "uyghur.act1.choice_ask_reason",
+              "next": "ask_reason_result",
+              "effects": {
+                "trust": -5,
+                "morale": 5
+              }
+            }
+          ]
+        },
+        {
+          "id": "comply_result",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.comply_result",
+          "next": "school_scene"
+        },
+        {
+          "id": "ask_reason_result",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.ask_reason_result",
+          "next": "school_scene"
+        },
+        {
+          "id": "school_scene",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.school_scene",
+          "next": "child_language"
+        },
+        {
+          "id": "child_language",
+          "speaker": "child",
+          "text_key": "uyghur.act1.child_language",
+          "next": "language_choice"
+        },
+        {
+          "id": "language_choice",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.language_choice_prompt",
+          "choices": [
+            {
+              "text_key": "uyghur.act1.choice_teach_uyghur",
+              "next": "teach_uyghur",
+              "effects": {
+                "morale": 12,
+                "trust": -6
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "taught_language",
+                  "value": true
+                }
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "uyghur.act1.choice_only_mandarin",
+              "next": "only_mandarin",
+              "effects": {
+                "morale": -8,
+                "trust": 4
+              }
+            }
+          ]
+        },
+        {
+          "id": "teach_uyghur",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.teach_uyghur",
+          "next": "evening_scene"
+        },
+        {
+          "id": "only_mandarin",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.only_mandarin",
+          "next": "evening_scene"
+        },
+        {
+          "id": "evening_scene",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.evening_scene",
+          "next": "act1_end"
+        },
+        {
+          "id": "act1_end",
+          "speaker": "narrator",
+          "text_key": "uyghur.act1.act1_end"
+        }
+      ]
+    },
+    {
+      "id": "act_2_rupture",
+      "type": "rupture",
+      "entry": "knock_at_door",
+      "nodes": [
+        {
+          "id": "knock_at_door",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.knock_at_door",
+          "next": "door_choice"
+        },
+        {
+          "id": "door_choice",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.door_choice_prompt",
+          "choices": [
+            {
+              "text_key": "uyghur.act2.choice_open_door",
+              "next": "open_door",
+              "effects": {
+                "trust": 5
+              }
+            },
+            {
+              "text_key": "uyghur.act2.choice_hide_quran",
+              "next": "hide_quran",
+              "effects": {
+                "morale": -5,
+                "trust": 8
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "quran_hidden",
+                  "value": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "hide_quran",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.hide_quran",
+          "next": "open_door"
+        },
+        {
+          "id": "open_door",
+          "speaker": "soldier",
+          "text_key": "uyghur.act2.officer_speaks",
+          "next": "search_scene"
+        },
+        {
+          "id": "search_scene",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.search_scene",
+          "next": "ijop_reveal"
+        },
+        {
+          "id": "ijop_reveal",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.ijop_reveal",
+          "network": {
+            "region": "uyghur",
+            "level": 1,
+            "highlight_nodes": [
+              "ccp",
+              "huawei",
+              "hikvision",
+              "xinjiang_gov"
+            ],
+            "highlight_edges": [
+              "huawei→xinjiang_gov",
+              "hikvision→xinjiang_gov",
+              "ccp→xinjiang_gov"
+            ]
+          },
+          "next": "search_result"
+        },
+        {
+          "id": "search_result",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.search_result",
+          "next": "father_taken"
+        },
+        {
+          "id": "father_taken",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.father_taken",
+          "on_enter": {
+            "morale": -20,
+            "trust": -10
+          },
+          "next": "father_taken_react"
+        },
+        {
+          "id": "father_taken_react",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.father_taken_react",
+          "choices": [
+            {
+              "text_key": "uyghur.act2.choice_ask_neighbors",
+              "next": "ask_neighbors",
+              "effects": {
+                "trust": 8
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "knows_neighbors",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "uyghur.act2.choice_stay_silent",
+              "next": "stay_silent",
+              "effects": {
+                "morale": -8
+              }
+            }
+          ]
+        },
+        {
+          "id": "ask_neighbors",
+          "speaker": "neighbor",
+          "text_key": "uyghur.act2.neighbor_whispers",
+          "next": "camp_truth"
+        },
+        {
+          "id": "stay_silent",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.stay_silent",
+          "next": "camp_truth"
+        },
+        {
+          "id": "camp_truth",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.camp_truth",
+          "next": "camp_network_reveal"
+        },
+        {
+          "id": "camp_network_reveal",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.camp_network_reveal",
+          "network": {
+            "region": "uyghur",
+            "level": 2,
+            "highlight_nodes": [
+              "ccp",
+              "xinjiang_gov",
+              "west_brands",
+              "cotton_supply",
+              "ioc"
+            ],
+            "highlight_edges": [
+              "west_brands→cotton_supply",
+              "cotton_supply→uyghur_halk",
+              "ioc→ccp"
+            ]
+          },
+          "next": "decision_point"
+        },
+        {
+          "id": "decision_point",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.decision_point",
+          "next": "act2_end"
+        },
+        {
+          "id": "act2_end",
+          "speaker": "narrator",
+          "text_key": "uyghur.act2.act2_end"
+        }
+      ]
+    },
+    {
+      "id": "act_3_migration",
+      "type": "migration",
+      "entry": "escape_plan",
+      "nodes": [
+        {
+          "id": "escape_plan",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.escape_plan",
+          "next": "route_choice"
+        },
+        {
+          "id": "route_choice",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.route_choice_prompt",
+          "choices": [
+            {
+              "text_key": "uyghur.act3.choice_route_kazakhstan",
+              "next": "route_kazakhstan",
+              "effects": {
+                "money": -8,
+                "food": -3,
+                "morale": 5
+              }
+            },
+            {
+              "text_key": "uyghur.act3.choice_route_south",
+              "next": "route_south",
+              "effects": {
+                "money": -5,
+                "food": -5,
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "id": "route_kazakhstan",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.route_kazakhstan",
+          "next": "mountain_crossing"
+        },
+        {
+          "id": "route_south",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.route_south",
+          "next": "mountain_crossing"
+        },
+        {
+          "id": "mountain_crossing",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.mountain_crossing",
+          "on_enter": {
+            "food": -4,
+            "morale": -8
+          },
+          "next": "fellow_traveler"
+        },
+        {
+          "id": "fellow_traveler",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.fellow_traveler",
+          "next": "traveler_choice"
+        },
+        {
+          "id": "traveler_choice",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.traveler_choice_prompt",
+          "choices": [
+            {
+              "text_key": "uyghur.act3.choice_travel_together",
+              "next": "travel_together",
+              "effects": {
+                "trust": 15,
+                "morale": 10,
+                "food": -3
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "uyghur.act3.choice_travel_alone",
+              "next": "travel_alone",
+              "effects": {
+                "food": 3,
+                "morale": -10
+              }
+            }
+          ]
+        },
+        {
+          "id": "travel_together",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.travel_together",
+          "next": "border_moment"
+        },
+        {
+          "id": "travel_alone",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.travel_alone",
+          "next": "border_moment"
+        },
+        {
+          "id": "border_moment",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.border_moment",
+          "on_enter": {
+            "morale": -10
+          },
+          "next": "language_memory",
+          "condition_check": {
+            "flag": "taught_language"
+          }
+        },
+        {
+          "id": "language_memory",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.language_memory",
+          "next": "act3_end"
+        },
+        {
+          "id": "act3_end",
+          "speaker": "narrator",
+          "text_key": "uyghur.act3.act3_end"
+        }
+      ]
+    }
+  ]
+}

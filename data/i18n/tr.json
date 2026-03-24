@@ -1,0 +1,82 @@
+{
+  "boot": {
+    "loading": "Yükleniyor..."
+  },
+  "map": {
+    "subtitle": "Bir bölge seç — Her nokta gerçek bir yara"
+  },
+  "chapter": {
+    "enter_prompt": "Yükleniyor..."
+  },
+  "region": {
+    "gaza": {
+      "short": "Gazze",
+      "name": "Gazze / Filistin",
+      "desc": "İşgal ve abluka altında bir halkın direniş hikâyesi."
+    },
+    "uyghur": {
+      "short": "D.Türkistan",
+      "name": "Doğu Türkistan",
+      "desc": "Dijital gözetim ve zorla asimilasyona karşı direniş."
+    },
+    "rohingya": {
+      "short": "Arakan",
+      "name": "Arakan / Rohingya",
+      "desc": "Vatansızlık ve denizaşırı kaçış yolculuğu."
+    },
+    "syria": {
+      "short": "Suriye",
+      "name": "Suriye",
+      "desc": "İç savaş ve Avrupa'ya uzanan hicret yolu."
+    },
+    "yemen": {
+      "short": "Yemen",
+      "name": "Yemen",
+      "desc": "Vekâlet savaşı ve açlıkla mücadele."
+    },
+    "kashmir": {
+      "short": "Keşmir",
+      "name": "Keşmir",
+      "desc": "İletişim ablukası altında sessiz direniş."
+    }
+  },
+  "speaker": {
+    "narrator": "Anlatıcı",
+    "player": "Sen",
+    "mother": "Annen",
+    "father": "Baban",
+    "child": "Çocuk",
+    "neighbor": "Komşu",
+    "smuggler": "Kaçakçı",
+    "soldier": "Asker",
+    "aid_worker": "Yardım Görevlisi",
+    "officer": "Görevli",
+    "guide": "Rehber",
+    "wife": "Eş"
+  },
+  "outcome": {
+    "generic": {
+      "note": "Bu bölümde yaşananlar gerçek olaylardan ilham almıştır.\nBelge arşivine geçerek kaynaklara ulaşabilirsin."
+    }
+  },
+  "ui": {
+    "continue": "Devam",
+    "back": "Geri",
+    "archive": "Arşiv",
+    "map": "Harita",
+    "settings": "Ayarlar",
+    "new_game": "Yeni Oyun",
+    "load_game": "Devam Et"
+  },
+  "settings": {
+    "title": "Ayarlar",
+    "sound": "SES",
+    "language": "DİL",
+    "about": "HAKKINDA",
+    "sfx": "Ses Efektleri",
+    "music": "Ambiyans Müzik",
+    "reset": "Varsayılan",
+    "apply": "Uygula",
+    "close": "Kapat"
+  }
+}

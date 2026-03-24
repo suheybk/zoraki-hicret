@@ -1,0 +1,360 @@
+{
+  "id": "gaza",
+  "title_key": "region.gaza.name",
+  "acts": [
+    {
+      "id": "act_1_life",
+      "type": "life",
+      "entry": "morning_start",
+      "nodes": [
+        {
+          "id": "morning_start",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.morning_start",
+          "next": "morning_choice"
+        },
+        {
+          "id": "morning_choice",
+          "speaker": "mother",
+          "text_key": "gaza.act1.mother_calls",
+          "choices": [
+            {
+              "text_key": "gaza.act1.choice_go_market",
+              "next": "market_scene",
+              "effects": {
+                "food": 3,
+                "money": -2
+              }
+            },
+            {
+              "text_key": "gaza.act1.choice_stay_home",
+              "next": "home_scene",
+              "effects": {
+                "morale": 5
+              }
+            },
+            {
+              "text_key": "gaza.act1.choice_check_news",
+              "next": "news_scene",
+              "effects": {
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "id": "market_scene",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.market_scene",
+          "next": "market_neighbor"
+        },
+        {
+          "id": "market_neighbor",
+          "speaker": "neighbor",
+          "text_key": "gaza.act1.neighbor_talks",
+          "on_enter": {
+            "flag": {
+              "key": "met_neighbor",
+              "value": true
+            }
+          },
+          "choices": [
+            {
+              "text_key": "gaza.act1.choice_listen_neighbor",
+              "next": "neighbor_story",
+              "effects": {
+                "trust": 8
+              }
+            },
+            {
+              "text_key": "gaza.act1.choice_hurry_back",
+              "next": "day_end"
+            }
+          ]
+        },
+        {
+          "id": "neighbor_story",
+          "speaker": "neighbor",
+          "text_key": "gaza.act1.neighbor_story",
+          "next": "day_end"
+        },
+        {
+          "id": "home_scene",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.home_scene",
+          "next": "home_child"
+        },
+        {
+          "id": "home_child",
+          "speaker": "child",
+          "text_key": "gaza.act1.child_asks",
+          "choices": [
+            {
+              "text_key": "gaza.act1.choice_tell_truth",
+              "next": "truth_response",
+              "effects": {
+                "trust": 5,
+                "morale": -3
+              }
+            },
+            {
+              "text_key": "gaza.act1.choice_comfort_child",
+              "next": "comfort_response",
+              "effects": {
+                "morale": 8,
+                "trust": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "truth_response",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.truth_response",
+          "next": "day_end"
+        },
+        {
+          "id": "comfort_response",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.comfort_response",
+          "next": "day_end"
+        },
+        {
+          "id": "news_scene",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.news_scene",
+          "next": "news_header"
+        },
+        {
+          "id": "news_header",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.news_header",
+          "on_enter": {
+            "flag": {
+              "key": "saw_news",
+              "value": true
+            }
+          },
+          "next": "day_end"
+        },
+        {
+          "id": "day_end",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.day_end",
+          "next": "electricity_cut"
+        },
+        {
+          "id": "electricity_cut",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.electricity_cut",
+          "on_enter": {
+            "morale": -5
+          },
+          "next": "act1_end"
+        },
+        {
+          "id": "act1_end",
+          "speaker": "narrator",
+          "text_key": "gaza.act1.act1_end"
+        }
+      ]
+    },
+    {
+      "id": "act_2_rupture",
+      "type": "rupture",
+      "entry": "rupture_start",
+      "nodes": [
+        {
+          "id": "rupture_start",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.rupture_start",
+          "next": "bombing_nearby"
+        },
+        {
+          "id": "bombing_nearby",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.bombing_nearby",
+          "on_enter": {
+            "morale": -15,
+            "food": -2
+          },
+          "next": "family_decision"
+        },
+        {
+          "id": "family_decision",
+          "speaker": "father",
+          "text_key": "gaza.act2.father_speaks",
+          "choices": [
+            {
+              "text_key": "gaza.act2.choice_flee_north",
+              "next": "flee_north_result",
+              "effects": {
+                "money": -5,
+                "morale": -8
+              }
+            },
+            {
+              "text_key": "gaza.act2.choice_stay_shelter",
+              "next": "shelter_result",
+              "effects": {
+                "food": -3,
+                "trust": 3
+              }
+            },
+            {
+              "text_key": "gaza.act2.choice_help_neighbor_first",
+              "condition": {
+                "flag": "met_neighbor"
+              },
+              "next": "help_neighbor_result",
+              "effects": {
+                "trust": 12,
+                "morale": 5,
+                "food": -2
+              },
+              "solidarity": true
+            }
+          ]
+        },
+        {
+          "id": "flee_north_result",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.flee_north_result",
+          "next": "network_reveal"
+        },
+        {
+          "id": "shelter_result",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.shelter_result",
+          "next": "network_reveal"
+        },
+        {
+          "id": "help_neighbor_result",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.help_neighbor_result",
+          "next": "network_reveal"
+        },
+        {
+          "id": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.network_reveal",
+          "on_enter": {
+            "flag": {
+              "key": "saw_network",
+              "value": true
+            }
+          },
+          "next": "network_detail",
+          "type": "network_reveal",
+          "network": {
+            "region": "gaza",
+            "level": 1,
+            "highlight_nodes": [
+              "usa",
+              "israel",
+              "boeing"
+            ],
+            "highlight_edges": [
+              "usa→israel",
+              "boeing→israel",
+              "usa→unsc"
+            ]
+          }
+        },
+        {
+          "id": "network_detail",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.network_detail",
+          "next": "act2_end",
+          "type": "network_reveal",
+          "network": {
+            "region": "gaza",
+            "level": 2,
+            "highlight_nodes": [
+              "rtx",
+              "jpmorgan",
+              "media_west",
+              "unsc"
+            ],
+            "highlight_edges": [
+              "usa→unsc",
+              "jpmorgan→rtx",
+              "media_west→gazze_halk",
+              "rtx→israel"
+            ]
+          }
+        },
+        {
+          "id": "act2_end",
+          "speaker": "narrator",
+          "text_key": "gaza.act2.act2_end"
+        }
+      ]
+    },
+    {
+      "id": "act_3_migration",
+      "type": "migration",
+      "entry": "migration_start",
+      "nodes": [
+        {
+          "id": "migration_start",
+          "speaker": "narrator",
+          "text_key": "gaza.act3.migration_start",
+          "next": "border_wait"
+        },
+        {
+          "id": "border_wait",
+          "speaker": "narrator",
+          "text_key": "gaza.act3.border_wait",
+          "on_enter": {
+            "morale": -10,
+            "food": -3
+          },
+          "choices": [
+            {
+              "text_key": "gaza.act3.choice_share_food",
+              "next": "share_food_result",
+              "effects": {
+                "food": -3,
+                "trust": 15,
+                "morale": 10
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "gaza.act3.choice_conserve",
+              "next": "conserve_result",
+              "effects": {
+                "food": 0,
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "id": "share_food_result",
+          "speaker": "aid_worker",
+          "text_key": "gaza.act3.share_food_result",
+          "next": "crossing_moment"
+        },
+        {
+          "id": "conserve_result",
+          "speaker": "narrator",
+          "text_key": "gaza.act3.conserve_result",
+          "next": "crossing_moment"
+        },
+        {
+          "id": "crossing_moment",
+          "speaker": "narrator",
+          "text_key": "gaza.act3.crossing_moment",
+          "next": "act3_end"
+        },
+        {
+          "id": "act3_end",
+          "speaker": "narrator",
+          "text_key": "gaza.act3.act3_end"
+        }
+      ]
+    }
+  ]
+}

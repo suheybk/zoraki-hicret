@@ -1,0 +1,502 @@
+{
+  "id": "syria",
+  "title_key": "region.syria.name",
+  "acts": [
+    {
+      "id": "act_1_life",
+      "type": "life",
+      "entry": "aleppo_morning",
+      "nodes": [
+        {
+          "id": "aleppo_morning",
+          "speaker": "narrator",
+          "text_key": "syria.act1.aleppo_morning",
+          "next": "family_breakfast"
+        },
+        {
+          "id": "family_breakfast",
+          "speaker": "narrator",
+          "text_key": "syria.act1.family_breakfast",
+          "next": "phone_call"
+        },
+        {
+          "id": "phone_call",
+          "speaker": "father",
+          "text_key": "syria.act1.phone_call",
+          "next": "call_choice"
+        },
+        {
+          "id": "call_choice",
+          "speaker": "narrator",
+          "text_key": "syria.act1.call_choice_prompt",
+          "choices": [
+            {
+              "text_key": "syria.act1.choice_go_market",
+              "next": "go_market",
+              "effects": {
+                "food": 5,
+                "money": -3
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "was_at_market",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "syria.act1.choice_stay_home",
+              "next": "stay_home_scene",
+              "effects": {
+                "morale": 6
+              }
+            }
+          ]
+        },
+        {
+          "id": "go_market",
+          "speaker": "narrator",
+          "text_key": "syria.act1.go_market",
+          "next": "market_bombing"
+        },
+        {
+          "id": "market_bombing",
+          "speaker": "narrator",
+          "text_key": "syria.act1.market_bombing",
+          "on_enter": {
+            "morale": -15
+          },
+          "next": "after_bombing"
+        },
+        {
+          "id": "after_bombing",
+          "speaker": "narrator",
+          "text_key": "syria.act1.after_bombing",
+          "next": "help_choice"
+        },
+        {
+          "id": "help_choice",
+          "speaker": "narrator",
+          "text_key": "syria.act1.help_choice_prompt",
+          "choices": [
+            {
+              "text_key": "syria.act1.choice_help_wounded",
+              "next": "help_wounded",
+              "effects": {
+                "trust": 12,
+                "morale": 5,
+                "food": -2
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "syria.act1.choice_run_home",
+              "next": "run_home",
+              "effects": {
+                "morale": -8
+              }
+            }
+          ]
+        },
+        {
+          "id": "help_wounded",
+          "speaker": "narrator",
+          "text_key": "syria.act1.help_wounded",
+          "next": "home_reunion"
+        },
+        {
+          "id": "run_home",
+          "speaker": "narrator",
+          "text_key": "syria.act1.run_home",
+          "next": "home_reunion"
+        },
+        {
+          "id": "stay_home_scene",
+          "speaker": "narrator",
+          "text_key": "syria.act1.stay_home_scene",
+          "next": "home_reunion"
+        },
+        {
+          "id": "home_reunion",
+          "speaker": "narrator",
+          "text_key": "syria.act1.home_reunion",
+          "next": "brother_question"
+        },
+        {
+          "id": "brother_question",
+          "speaker": "neighbor",
+          "text_key": "syria.act1.brother_question",
+          "next": "brother_choice"
+        },
+        {
+          "id": "brother_choice",
+          "speaker": "narrator",
+          "text_key": "syria.act1.brother_choice_prompt",
+          "choices": [
+            {
+              "text_key": "syria.act1.choice_hide_brother",
+              "next": "hide_brother",
+              "effects": {
+                "trust": 8,
+                "morale": 5
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "brother_hidden",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "syria.act1.choice_no_brother_here",
+              "next": "no_brother",
+              "effects": {
+                "trust": -5,
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "id": "hide_brother",
+          "speaker": "narrator",
+          "text_key": "syria.act1.hide_brother",
+          "next": "night_scene"
+        },
+        {
+          "id": "no_brother",
+          "speaker": "narrator",
+          "text_key": "syria.act1.no_brother",
+          "next": "night_scene"
+        },
+        {
+          "id": "night_scene",
+          "speaker": "narrator",
+          "text_key": "syria.act1.night_scene",
+          "next": "act1_end"
+        },
+        {
+          "id": "act1_end",
+          "speaker": "narrator",
+          "text_key": "syria.act1.act1_end"
+        }
+      ]
+    },
+    {
+      "id": "act_2_rupture",
+      "type": "rupture",
+      "entry": "barrel_bomb",
+      "nodes": [
+        {
+          "id": "barrel_bomb",
+          "speaker": "narrator",
+          "text_key": "syria.act2.barrel_bomb",
+          "on_enter": {
+            "morale": -25,
+            "food": -3
+          },
+          "next": "rubble_escape"
+        },
+        {
+          "id": "rubble_escape",
+          "speaker": "narrator",
+          "text_key": "syria.act2.rubble_escape",
+          "next": "family_separated"
+        },
+        {
+          "id": "family_separated",
+          "speaker": "narrator",
+          "text_key": "syria.act2.family_separated",
+          "next": "search_choice"
+        },
+        {
+          "id": "search_choice",
+          "speaker": "narrator",
+          "text_key": "syria.act2.search_choice_prompt",
+          "choices": [
+            {
+              "text_key": "syria.act2.choice_search_rubble",
+              "next": "search_rubble",
+              "effects": {
+                "morale": 8,
+                "trust": 10
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "searched_rubble",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "syria.act2.choice_flee_now",
+              "next": "flee_now",
+              "effects": {
+                "morale": -18,
+                "food": 3
+              }
+            }
+          ]
+        },
+        {
+          "id": "search_rubble",
+          "speaker": "narrator",
+          "text_key": "syria.act2.search_rubble",
+          "next": "found_result"
+        },
+        {
+          "id": "found_result",
+          "speaker": "narrator",
+          "text_key": "syria.act2.found_result",
+          "next": "network_reveal_war"
+        },
+        {
+          "id": "flee_now",
+          "speaker": "narrator",
+          "text_key": "syria.act2.flee_now",
+          "next": "network_reveal_war"
+        },
+        {
+          "id": "network_reveal_war",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "syria.act2.network_reveal_war",
+          "network": {
+            "region": "syria",
+            "level": 1,
+            "highlight_nodes": [
+              "russia",
+              "assad",
+              "barrel_bomb"
+            ],
+            "highlight_edges": [
+              "russia→assad",
+              "barrel_bomb→syria_halk",
+              "russia→unsc_russia"
+            ]
+          },
+          "next": "message_to_brother"
+        },
+        {
+          "id": "message_to_brother",
+          "speaker": "narrator",
+          "text_key": "syria.act2.message_to_brother",
+          "next": "message_choice"
+        },
+        {
+          "id": "message_choice",
+          "speaker": "narrator",
+          "text_key": "syria.act2.message_choice_prompt",
+          "choices": [
+            {
+              "text_key": "syria.act2.choice_send_location",
+              "next": "send_location",
+              "effects": {
+                "trust": 8,
+                "morale": 5
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "brother_knows_route",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "syria.act2.choice_go_silent",
+              "next": "go_silent",
+              "effects": {
+                "morale": -8
+              }
+            }
+          ]
+        },
+        {
+          "id": "send_location",
+          "speaker": "narrator",
+          "text_key": "syria.act2.send_location",
+          "next": "road_to_turkey"
+        },
+        {
+          "id": "go_silent",
+          "speaker": "narrator",
+          "text_key": "syria.act2.go_silent",
+          "next": "road_to_turkey"
+        },
+        {
+          "id": "road_to_turkey",
+          "speaker": "narrator",
+          "text_key": "syria.act2.road_to_turkey",
+          "on_enter": {
+            "food": -4,
+            "money": -5
+          },
+          "next": "network_reveal_veto"
+        },
+        {
+          "id": "network_reveal_veto",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "syria.act2.network_reveal_veto",
+          "network": {
+            "region": "syria",
+            "level": 2,
+            "highlight_nodes": [
+              "russia",
+              "unsc_russia",
+              "russia_media",
+              "rosoboron"
+            ],
+            "highlight_edges": [
+              "russia→unsc_russia",
+              "unsc_russia→syria_halk",
+              "rosoboron→russia",
+              "russia_media→syria_halk"
+            ]
+          },
+          "next": "act2_end"
+        },
+        {
+          "id": "act2_end",
+          "speaker": "narrator",
+          "text_key": "syria.act2.act2_end"
+        }
+      ]
+    },
+    {
+      "id": "act_3_migration",
+      "type": "migration",
+      "entry": "turkey_arrival",
+      "nodes": [
+        {
+          "id": "turkey_arrival",
+          "speaker": "narrator",
+          "text_key": "syria.act3.turkey_arrival",
+          "next": "istanbul_camp"
+        },
+        {
+          "id": "istanbul_camp",
+          "speaker": "narrator",
+          "text_key": "syria.act3.istanbul_camp",
+          "on_enter": {
+            "food": -2,
+            "morale": -5
+          },
+          "next": "route_debate"
+        },
+        {
+          "id": "route_debate",
+          "speaker": "narrator",
+          "text_key": "syria.act3.route_debate",
+          "next": "route_choice"
+        },
+        {
+          "id": "route_choice",
+          "speaker": "narrator",
+          "text_key": "syria.act3.route_choice_prompt",
+          "choices": [
+            {
+              "text_key": "syria.act3.choice_aegean_boat",
+              "next": "aegean_boat",
+              "effects": {
+                "money": -12,
+                "morale": 8
+              }
+            },
+            {
+              "text_key": "syria.act3.choice_land_route",
+              "next": "land_route",
+              "effects": {
+                "money": -6,
+                "food": -5,
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "id": "aegean_boat",
+          "speaker": "narrator",
+          "text_key": "syria.act3.aegean_boat",
+          "next": "boat_night"
+        },
+        {
+          "id": "land_route",
+          "speaker": "narrator",
+          "text_key": "syria.act3.land_route",
+          "next": "boat_night"
+        },
+        {
+          "id": "boat_night",
+          "speaker": "narrator",
+          "text_key": "syria.act3.boat_night",
+          "on_enter": {
+            "morale": -12
+          },
+          "next": "life_vest_choice"
+        },
+        {
+          "id": "life_vest_choice",
+          "speaker": "narrator",
+          "text_key": "syria.act3.life_vest_prompt",
+          "choices": [
+            {
+              "text_key": "syria.act3.choice_give_vest_child",
+              "next": "give_vest",
+              "effects": {
+                "trust": 20,
+                "morale": 15
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "gave_vest",
+                  "value": true
+                }
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "syria.act3.choice_keep_vest",
+              "next": "keep_vest",
+              "effects": {
+                "morale": -20
+              }
+            }
+          ]
+        },
+        {
+          "id": "give_vest",
+          "speaker": "narrator",
+          "text_key": "syria.act3.give_vest",
+          "next": "greece_shore"
+        },
+        {
+          "id": "keep_vest",
+          "speaker": "narrator",
+          "text_key": "syria.act3.keep_vest",
+          "next": "greece_shore"
+        },
+        {
+          "id": "greece_shore",
+          "speaker": "narrator",
+          "text_key": "syria.act3.greece_shore",
+          "next": "brother_reunion",
+          "condition_check": {
+            "flag": "brother_knows_route"
+          }
+        },
+        {
+          "id": "brother_reunion",
+          "speaker": "narrator",
+          "text_key": "syria.act3.brother_reunion",
+          "next": "act3_end"
+        },
+        {
+          "id": "act3_end",
+          "speaker": "narrator",
+          "text_key": "syria.act3.act3_end"
+        }
+      ]
+    }
+  ]
+}

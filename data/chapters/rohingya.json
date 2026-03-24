@@ -1,0 +1,485 @@
+{
+  "id": "rohingya",
+  "title_key": "region.rohingya.name",
+  "acts": [
+    {
+      "id": "act_1_life",
+      "type": "life",
+      "entry": "village_dawn",
+      "nodes": [
+        {
+          "id": "village_dawn",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.village_dawn",
+          "next": "identity_card"
+        },
+        {
+          "id": "identity_card",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.identity_card",
+          "next": "card_choice"
+        },
+        {
+          "id": "card_choice",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.card_choice_prompt",
+          "choices": [
+            {
+              "text_key": "rohingya.act1.choice_show_card",
+              "next": "show_card_result",
+              "effects": {
+                "trust": -5,
+                "morale": -8
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "showed_card",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "rohingya.act1.choice_hide_card",
+              "next": "hide_card_result",
+              "effects": {
+                "trust": 5,
+                "morale": 3
+              }
+            }
+          ]
+        },
+        {
+          "id": "show_card_result",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.show_card_result",
+          "next": "market_scene"
+        },
+        {
+          "id": "hide_card_result",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.hide_card_result",
+          "next": "market_scene"
+        },
+        {
+          "id": "market_scene",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.market_scene",
+          "next": "mosque_scene"
+        },
+        {
+          "id": "mosque_scene",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.mosque_scene",
+          "next": "elder_speaks"
+        },
+        {
+          "id": "elder_speaks",
+          "speaker": "neighbor",
+          "text_key": "rohingya.act1.elder_speaks",
+          "next": "elder_choice"
+        },
+        {
+          "id": "elder_choice",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.elder_choice_prompt",
+          "choices": [
+            {
+              "text_key": "rohingya.act1.choice_trust_elder",
+              "next": "trust_elder",
+              "effects": {
+                "trust": 10,
+                "morale": 5
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "knows_route",
+                  "value": true
+                }
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "rohingya.act1.choice_doubt_elder",
+              "next": "doubt_elder",
+              "effects": {
+                "morale": -3
+              }
+            }
+          ]
+        },
+        {
+          "id": "trust_elder",
+          "speaker": "neighbor",
+          "text_key": "rohingya.act1.elder_route_info",
+          "next": "evening_fire"
+        },
+        {
+          "id": "doubt_elder",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.doubt_elder",
+          "next": "evening_fire"
+        },
+        {
+          "id": "evening_fire",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.evening_fire",
+          "next": "child_question"
+        },
+        {
+          "id": "child_question",
+          "speaker": "child",
+          "text_key": "rohingya.act1.child_question",
+          "next": "child_answer_choice"
+        },
+        {
+          "id": "child_answer_choice",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.child_answer_prompt",
+          "choices": [
+            {
+              "text_key": "rohingya.act1.choice_explain_truth",
+              "next": "explain_truth",
+              "effects": {
+                "morale": 8,
+                "trust": 3
+              }
+            },
+            {
+              "text_key": "rohingya.act1.choice_protect_child",
+              "next": "protect_child",
+              "effects": {
+                "morale": -5,
+                "trust": 2
+              }
+            }
+          ]
+        },
+        {
+          "id": "explain_truth",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.explain_truth",
+          "next": "act1_end"
+        },
+        {
+          "id": "protect_child",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.protect_child",
+          "next": "act1_end"
+        },
+        {
+          "id": "act1_end",
+          "speaker": "narrator",
+          "text_key": "rohingya.act1.act1_end"
+        }
+      ]
+    },
+    {
+      "id": "act_2_rupture",
+      "type": "rupture",
+      "entry": "fire_at_night",
+      "nodes": [
+        {
+          "id": "fire_at_night",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.fire_at_night",
+          "on_enter": {
+            "morale": -20
+          },
+          "next": "flee_village"
+        },
+        {
+          "id": "flee_village",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.flee_village",
+          "next": "flee_choice"
+        },
+        {
+          "id": "flee_choice",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.flee_choice_prompt",
+          "choices": [
+            {
+              "text_key": "rohingya.act2.choice_take_neighbor",
+              "next": "take_neighbor",
+              "effects": {
+                "trust": 15,
+                "food": -3,
+                "money": -2
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "saved_neighbor",
+                  "value": true
+                }
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "rohingya.act2.choice_flee_alone",
+              "next": "flee_alone",
+              "effects": {
+                "food": 3,
+                "morale": -12
+              }
+            }
+          ]
+        },
+        {
+          "id": "take_neighbor",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.take_neighbor",
+          "next": "forest_path"
+        },
+        {
+          "id": "flee_alone",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.flee_alone",
+          "next": "forest_path"
+        },
+        {
+          "id": "forest_path",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.forest_path",
+          "on_enter": {
+            "food": -2
+          },
+          "next": "network_reveal_1"
+        },
+        {
+          "id": "network_reveal_1",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.network_reveal_1",
+          "network": {
+            "region": "rohingya",
+            "level": 1,
+            "highlight_nodes": [
+              "myanmar_gov",
+              "military",
+              "rakhine_militia"
+            ],
+            "highlight_edges": [
+              "military→rohingya_halk",
+              "rakhine_militia→rohingya_halk"
+            ]
+          },
+          "next": "bangladesh_border"
+        },
+        {
+          "id": "bangladesh_border",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.bangladesh_border",
+          "next": "border_guard"
+        },
+        {
+          "id": "border_guard",
+          "speaker": "soldier",
+          "text_key": "rohingya.act2.border_guard_speaks",
+          "next": "bribe_choice"
+        },
+        {
+          "id": "bribe_choice",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.bribe_choice_prompt",
+          "choices": [
+            {
+              "text_key": "rohingya.act2.choice_pay_bribe",
+              "next": "pay_bribe",
+              "effects": {
+                "money": -8,
+                "trust": 5
+              }
+            },
+            {
+              "text_key": "rohingya.act2.choice_plead",
+              "next": "plead_result",
+              "effects": {
+                "morale": -5,
+                "trust": -3
+              }
+            }
+          ]
+        },
+        {
+          "id": "pay_bribe",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.pay_bribe",
+          "next": "camp_arrival"
+        },
+        {
+          "id": "plead_result",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.plead_result",
+          "next": "camp_arrival"
+        },
+        {
+          "id": "camp_arrival",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.camp_arrival",
+          "next": "network_reveal_2"
+        },
+        {
+          "id": "network_reveal_2",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.network_reveal_2",
+          "network": {
+            "region": "rohingya",
+            "level": 2,
+            "highlight_nodes": [
+              "china",
+              "india",
+              "asean",
+              "unsc_block"
+            ],
+            "highlight_edges": [
+              "china→unsc_block",
+              "india→myanmar_gov",
+              "asean→myanmar_gov"
+            ]
+          },
+          "next": "act2_end"
+        },
+        {
+          "id": "act2_end",
+          "speaker": "narrator",
+          "text_key": "rohingya.act2.act2_end"
+        }
+      ]
+    },
+    {
+      "id": "act_3_migration",
+      "type": "migration",
+      "entry": "camp_life",
+      "nodes": [
+        {
+          "id": "camp_life",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.camp_life",
+          "on_enter": {
+            "food": -2,
+            "morale": -8
+          },
+          "next": "smuggler_offer"
+        },
+        {
+          "id": "smuggler_offer",
+          "speaker": "smuggler",
+          "text_key": "rohingya.act3.smuggler_offer",
+          "next": "smuggler_choice"
+        },
+        {
+          "id": "smuggler_choice",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.smuggler_choice_prompt",
+          "choices": [
+            {
+              "text_key": "rohingya.act3.choice_accept_boat",
+              "next": "accept_boat",
+              "effects": {
+                "money": -10,
+                "morale": 5
+              }
+            },
+            {
+              "text_key": "rohingya.act3.choice_wait_unhcr",
+              "next": "wait_unhcr",
+              "effects": {
+                "food": -4,
+                "morale": -10
+              }
+            }
+          ]
+        },
+        {
+          "id": "accept_boat",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.accept_boat",
+          "next": "on_the_sea"
+        },
+        {
+          "id": "wait_unhcr",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.wait_unhcr",
+          "next": "unhcr_result"
+        },
+        {
+          "id": "unhcr_result",
+          "speaker": "aid_worker",
+          "text_key": "rohingya.act3.unhcr_result",
+          "next": "on_the_sea"
+        },
+        {
+          "id": "on_the_sea",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.on_the_sea",
+          "on_enter": {
+            "food": -5,
+            "morale": -15
+          },
+          "next": "sea_crisis"
+        },
+        {
+          "id": "sea_crisis",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.sea_crisis",
+          "next": "sea_choice"
+        },
+        {
+          "id": "sea_choice",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.sea_choice_prompt",
+          "choices": [
+            {
+              "text_key": "rohingya.act3.choice_share_water",
+              "next": "share_water",
+              "effects": {
+                "food": -3,
+                "trust": 18,
+                "morale": 12
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "rohingya.act3.choice_save_family",
+              "next": "save_family",
+              "effects": {
+                "food": 2,
+                "morale": -15
+              }
+            }
+          ]
+        },
+        {
+          "id": "share_water",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.share_water",
+          "next": "land_sighted"
+        },
+        {
+          "id": "save_family",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.save_family",
+          "next": "land_sighted"
+        },
+        {
+          "id": "land_sighted",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.land_sighted",
+          "next": "malaysia_shore"
+        },
+        {
+          "id": "malaysia_shore",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.malaysia_shore",
+          "next": "act3_end"
+        },
+        {
+          "id": "act3_end",
+          "speaker": "narrator",
+          "text_key": "rohingya.act3.act3_end"
+        }
+      ]
+    }
+  ]
+}

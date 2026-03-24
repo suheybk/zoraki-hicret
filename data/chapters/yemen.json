@@ -1,0 +1,461 @@
+{
+  "id": "yemen",
+  "title_key": "region.yemen.name",
+  "acts": [
+    {
+      "id": "act_1_life",
+      "type": "life",
+      "entry": "sanaa_morning",
+      "nodes": [
+        {
+          "id": "sanaa_morning",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.sanaa_morning",
+          "next": "water_queue"
+        },
+        {
+          "id": "water_queue",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.water_queue",
+          "next": "water_choice"
+        },
+        {
+          "id": "water_choice",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.water_choice_prompt",
+          "choices": [
+            {
+              "text_key": "yemen.act1.choice_share_water",
+              "next": "share_water",
+              "effects": {
+                "food": -2,
+                "trust": 12,
+                "morale": 8
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "yemen.act1.choice_keep_water",
+              "next": "keep_water",
+              "effects": {
+                "food": 4,
+                "trust": -5,
+                "morale": -6
+              }
+            }
+          ]
+        },
+        {
+          "id": "share_water",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.share_water",
+          "next": "clinic_scene"
+        },
+        {
+          "id": "keep_water",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.keep_water",
+          "next": "clinic_scene"
+        },
+        {
+          "id": "clinic_scene",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.clinic_scene",
+          "next": "doctor_speaks"
+        },
+        {
+          "id": "doctor_speaks",
+          "speaker": "aid_worker",
+          "text_key": "yemen.act1.doctor_speaks",
+          "next": "medicine_choice"
+        },
+        {
+          "id": "medicine_choice",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.medicine_choice_prompt",
+          "choices": [
+            {
+              "text_key": "yemen.act1.choice_use_medicine",
+              "next": "use_medicine",
+              "effects": {
+                "food": -1,
+                "money": -4,
+                "morale": 10
+              }
+            },
+            {
+              "text_key": "yemen.act1.choice_save_medicine",
+              "next": "save_medicine",
+              "effects": {
+                "trust": 5,
+                "morale": -8
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "saved_medicine",
+                  "value": true
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "use_medicine",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.use_medicine",
+          "next": "market_rubble"
+        },
+        {
+          "id": "save_medicine",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.save_medicine",
+          "next": "market_rubble"
+        },
+        {
+          "id": "market_rubble",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.market_rubble",
+          "next": "port_news"
+        },
+        {
+          "id": "port_news",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.port_news",
+          "next": "hunger_talk"
+        },
+        {
+          "id": "hunger_talk",
+          "speaker": "child",
+          "text_key": "yemen.act1.child_hungry",
+          "next": "hunger_choice"
+        },
+        {
+          "id": "hunger_choice",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.hunger_choice_prompt",
+          "choices": [
+            {
+              "text_key": "yemen.act1.choice_last_food",
+              "next": "give_last_food",
+              "effects": {
+                "food": -4,
+                "morale": 12,
+                "trust": 8
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "yemen.act1.choice_wait_aid",
+              "next": "wait_aid",
+              "effects": {
+                "morale": -10
+              }
+            }
+          ]
+        },
+        {
+          "id": "give_last_food",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.give_last_food",
+          "next": "act1_end"
+        },
+        {
+          "id": "wait_aid",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.wait_aid",
+          "next": "act1_end"
+        },
+        {
+          "id": "act1_end",
+          "speaker": "narrator",
+          "text_key": "yemen.act1.act1_end"
+        }
+      ]
+    },
+    {
+      "id": "act_2_rupture",
+      "type": "rupture",
+      "entry": "airstrike_night",
+      "nodes": [
+        {
+          "id": "airstrike_night",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.airstrike_night",
+          "on_enter": {
+            "morale": -20,
+            "food": -3
+          },
+          "next": "shelter_run"
+        },
+        {
+          "id": "shelter_run",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.shelter_run",
+          "next": "shelter_choice"
+        },
+        {
+          "id": "shelter_choice",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.shelter_choice_prompt",
+          "choices": [
+            {
+              "text_key": "yemen.act2.choice_mosque_shelter",
+              "next": "mosque_shelter",
+              "effects": {
+                "trust": 15,
+                "morale": 8
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "yemen.act2.choice_flee_city",
+              "next": "flee_city",
+              "effects": {
+                "food": -4,
+                "money": -6,
+                "morale": -5
+              }
+            }
+          ]
+        },
+        {
+          "id": "mosque_shelter",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.mosque_shelter",
+          "next": "network_reveal_war"
+        },
+        {
+          "id": "flee_city",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.flee_city",
+          "next": "network_reveal_war"
+        },
+        {
+          "id": "network_reveal_war",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.network_reveal_war",
+          "network": {
+            "region": "yemen",
+            "level": 1,
+            "highlight_nodes": [
+              "saudi_coalition",
+              "uae",
+              "usa_arms",
+              "uk_arms"
+            ],
+            "highlight_edges": [
+              "usa_arms→saudi_coalition",
+              "uk_arms→saudi_coalition",
+              "saudi_coalition→yemen_halk"
+            ]
+          },
+          "next": "port_blockade"
+        },
+        {
+          "id": "port_blockade",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.port_blockade",
+          "on_enter": {
+            "food": -5
+          },
+          "next": "blockade_choice"
+        },
+        {
+          "id": "blockade_choice",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.blockade_choice_prompt",
+          "choices": [
+            {
+              "text_key": "yemen.act2.choice_distribute_food",
+              "next": "distribute_food",
+              "effects": {
+                "trust": 18,
+                "food": -5,
+                "morale": 10
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "yemen.act2.choice_hoard_food",
+              "next": "hoard_food",
+              "effects": {
+                "food": 5,
+                "trust": -12,
+                "morale": -15
+              }
+            }
+          ]
+        },
+        {
+          "id": "distribute_food",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.distribute_food",
+          "next": "network_reveal_famine"
+        },
+        {
+          "id": "hoard_food",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.hoard_food",
+          "next": "network_reveal_famine"
+        },
+        {
+          "id": "network_reveal_famine",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.network_reveal_famine",
+          "network": {
+            "region": "yemen",
+            "level": 2,
+            "highlight_nodes": [
+              "saudi_coalition",
+              "hodeidah_port",
+              "arms_dealers",
+              "iran_houthi"
+            ],
+            "highlight_edges": [
+              "saudi_coalition→hodeidah_port",
+              "arms_dealers→iran_houthi",
+              "hodeidah_port→yemen_halk"
+            ]
+          },
+          "next": "decision_flee"
+        },
+        {
+          "id": "decision_flee",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.decision_flee",
+          "next": "act2_end"
+        },
+        {
+          "id": "act2_end",
+          "speaker": "narrator",
+          "text_key": "yemen.act2.act2_end"
+        }
+      ]
+    },
+    {
+      "id": "act_3_migration",
+      "type": "migration",
+      "entry": "road_north",
+      "nodes": [
+        {
+          "id": "road_north",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.road_north",
+          "on_enter": {
+            "food": -3,
+            "money": -4
+          },
+          "next": "checkpoint_north"
+        },
+        {
+          "id": "checkpoint_north",
+          "speaker": "soldier",
+          "text_key": "yemen.act3.checkpoint_soldier",
+          "next": "checkpoint_choice"
+        },
+        {
+          "id": "checkpoint_choice",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.checkpoint_choice_prompt",
+          "choices": [
+            {
+              "text_key": "yemen.act3.choice_pay_passage",
+              "next": "pay_passage",
+              "effects": {
+                "money": -8,
+                "trust": 3
+              }
+            },
+            {
+              "text_key": "yemen.act3.choice_other_route",
+              "next": "other_route",
+              "effects": {
+                "food": -4,
+                "morale": -8
+              }
+            }
+          ]
+        },
+        {
+          "id": "pay_passage",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.pay_passage",
+          "next": "wfp_camp"
+        },
+        {
+          "id": "other_route",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.other_route",
+          "next": "wfp_camp"
+        },
+        {
+          "id": "wfp_camp",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.wfp_camp",
+          "next": "wfp_aid_worker"
+        },
+        {
+          "id": "wfp_aid_worker",
+          "speaker": "aid_worker",
+          "text_key": "yemen.act3.wfp_worker_speaks",
+          "next": "aid_choice"
+        },
+        {
+          "id": "aid_choice",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.aid_choice_prompt",
+          "choices": [
+            {
+              "text_key": "yemen.act3.choice_help_distribution",
+              "next": "help_distribution",
+              "effects": {
+                "trust": 20,
+                "morale": 15
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "yemen.act3.choice_rest_only",
+              "next": "rest_only",
+              "effects": {
+                "food": 5,
+                "morale": 5
+              }
+            }
+          ]
+        },
+        {
+          "id": "help_distribution",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.help_distribution",
+          "next": "djibouti_crossing"
+        },
+        {
+          "id": "rest_only",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.rest_only",
+          "next": "djibouti_crossing"
+        },
+        {
+          "id": "djibouti_crossing",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.djibouti_crossing",
+          "next": "child_recovery"
+        },
+        {
+          "id": "child_recovery",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.child_recovery",
+          "next": "act3_end"
+        },
+        {
+          "id": "act3_end",
+          "speaker": "narrator",
+          "text_key": "yemen.act3.act3_end"
+        }
+      ]
+    }
+  ]
+}

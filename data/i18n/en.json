@@ -1,0 +1,82 @@
+{
+  "boot": {
+    "loading": "Loading..."
+  },
+  "map": {
+    "subtitle": "Choose a region — Every dot is a real wound"
+  },
+  "chapter": {
+    "enter_prompt": "Loading..."
+  },
+  "region": {
+    "gaza": {
+      "short": "Gaza",
+      "name": "Gaza / Palestine",
+      "desc": "A people's story of resistance under occupation and siege."
+    },
+    "uyghur": {
+      "short": "E.Turkestan",
+      "name": "East Turkestan",
+      "desc": "Resisting digital surveillance and forced assimilation."
+    },
+    "rohingya": {
+      "short": "Arakan",
+      "name": "Arakan / Rohingya",
+      "desc": "Statelessness and the journey across the sea."
+    },
+    "syria": {
+      "short": "Syria",
+      "name": "Syria",
+      "desc": "Civil war and the long road to Europe."
+    },
+    "yemen": {
+      "short": "Yemen",
+      "name": "Yemen",
+      "desc": "Proxy war and the struggle against famine."
+    },
+    "kashmir": {
+      "short": "Kashmir",
+      "name": "Kashmir",
+      "desc": "Silent resistance under communications blackout."
+    }
+  },
+  "speaker": {
+    "narrator": "Narrator",
+    "player": "You",
+    "mother": "Mother",
+    "father": "Father",
+    "child": "Child",
+    "neighbor": "Neighbor",
+    "smuggler": "Smuggler",
+    "soldier": "Soldier",
+    "aid_worker": "Aid Worker",
+    "officer": "Officer",
+    "guide": "Guide",
+    "wife": "Wife"
+  },
+  "outcome": {
+    "generic": {
+      "note": "The events in this chapter are inspired by real documented stories.\nVisit the archive to access the sources."
+    }
+  },
+  "ui": {
+    "continue": "Continue",
+    "back": "Back",
+    "archive": "Archive",
+    "map": "Map",
+    "settings": "Settings",
+    "new_game": "New Game",
+    "load_game": "Continue"
+  },
+  "settings": {
+    "title": "Settings",
+    "sound": "SOUND",
+    "language": "LANGUAGE",
+    "about": "ABOUT",
+    "sfx": "Sound Effects",
+    "music": "Ambient Music",
+    "reset": "Reset",
+    "apply": "Apply",
+    "close": "Close"
+  }
+}

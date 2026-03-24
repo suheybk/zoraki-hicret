@@ -1,0 +1,21 @@
+# Derleme çıktıları
+dist/
+build_web/
+*.love
+*.zip
+
+# İşletim sistemi
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editör
+.vscode/
+*.swp
+*~
+
+# Telemetri (yerel kayıt)
+playtest_log.json
+
+# LÖVE kayıt dosyaları
+save.json

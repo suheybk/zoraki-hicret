@@ -1,0 +1,102 @@
+{
+  "yemen": {
+    "act1": {
+      "sanaa_morning": "Sana'a, Yemen. 2017.\n\nAdın Maryam. Hemşiresin ama hastane bombalandıktan bu yana iki kliniğe dönüştürülmüş bir okul binasında çalışıyorsun. Kocan Hamid kamyon şoförü — ama mazot yok, iş yok. Kızın Hana beş yaşında.\n\nSabah güneşi Yemen'e her zaman güzel doğar. Bomba seslerine rağmen.",
+
+      "water_queue": "Su kuyruğu. Her sabah aynı. Hodeidah Limanı abluka altında olduğundan klorlama kimyasalları gelmiyor. Kuyudan gelen su temiz değil.\n\nYanda bir anne, sarı yüzlü bir bebeği tutmuş. Elinde son plastik bidonu var — sana uzatıyor, gözleri bir şey söylüyor.",
+
+      "water_choice_prompt": "Ne yaparsın?",
+      "choice_share_water": "Kendi suyundan ver — onun daha çok ihtiyacı var",
+      "choice_keep_water": "Sakla — Hana için",
+
+      "share_water": "Verdin. Kadın bir şey söylemedi — söyleyemedi. Ama o an orada bir şey geçti aranızda.\n\nHana susadığında başka bir yol bulunur. Her zaman olmuş.",
+      "keep_water": "Tuttun. Çocuğun için en doğrusu buydu. Ama o kadının gözleri peşinden geliyor.",
+
+      "clinic_scene": "Klinik. On iki çocuk; ikisi yoğun bakımda, hepsi malnütrisyon. Dünya Sağlık Örgütü bu tabloyu 2017'de 'insanlığın en kötü insani krizi' olarak tanımladı.\n\nBeş yaşından küçük 400.000 çocuk ağır akut malnütrisyon içinde.",
+
+      "doctor_speaks": "Maryam, terapötik beslenme paketlerimiz kalmadı. Mağazalarda da yok. Liman kapalı. Bildirdiğimizde bize 'stok var' diyorlar ama limanda bekletiyorlar.",
+
+      "medicine_choice_prompt": "Elimde bir haftalık çocuk multivitamini kaldı. Hana'ya mı versem, yoksa klinikte mi saklasam?",
+      "choice_use_medicine": "Hana'ya ver — o senin çocuğun",
+      "choice_save_medicine": "Kliniğe bırak — daha çok ihtiyacı olan var",
+
+      "use_medicine": "Hana neşeyle yuttu. Güldü — bu gülüşü hak ediyordu.\n\nAma yarın kliniktekilere ne diyeceksin?",
+      "save_medicine": "Bıraktın. Hana bilmiyor. Bu kararın ağırlığını sadece sen taşıyorsun.",
+
+      "market_rubble": "Pazar yeri. Ya da eskiden öyleydi. Şimdi bazı tezgâhlar açık, bazıları yıkık binalara yaslanmış.\n\nFiyatlar: pirinç 2019'dan bu yana 4 kat arttı. Ekmek 3 kat. İnsanlar ne satacak bir şey kalmadığından bileziklerini satıyor.",
+
+      "port_news": "Radyo: Koalisyon güçleri Hodeidah Limanı'ndaki kontrolleri sıkılaştırdı. WFP'nin gıda gemisi üç haftadır limanda bekliyor.\n\n18 milyon insan gıda güvensizliği içinde. Bunların 8 milyonu kıtlığa bir adım uzakta.",
+
+      "child_hungry": "Anne, karnım acıktı. Dün yediklerimiz nerede?",
+
+      "hunger_choice_prompt": "Rafta son mercimek paketi var — iki kişilik. Hana için yeterli. Ama komşu Fatima üç çocukla kapıda.",
+      "choice_last_food": "Fatima ile paylaş",
+      "choice_wait_aid": "Yardım konvoyunu bekle",
+
+      "give_last_food": "Fatima'ya çağırdın. Birlikte pişirdiler — az ama birlikte.\n\nHana en küçük çocuğa kasesini uzattı — kimse söylememişti bunu. Bazı şeyler öğretilmeden öğreniliyor.",
+      "wait_aid": "Bekliyorsunuz. Konvoy gelmedi. Yarın belki.\n\nHana uyudu. Boş mide hafif bir çocuk yapsın seni diye dua ederek.",
+
+      "act1_end": "Yemen savaşında iki taraf da silah kullanıyor — biri gökyüzünden, biri limandan. Açlık silah olarak kullanıldığında savaş alanı sofra başına taşınır."
+    },
+
+    "act2": {
+      "airstrike_night": "Gece 23:40. Patlama.\n\nYakın. Bu semte değil, iki sokak ötesi. İkinci patlama. Sonra üçüncü.\n\nHana ağlıyor. Hamid yataktan fırladı: 'Kalk, git.'",
+
+      "shelter_run": "Dışarı çıktınız. Sokak toz içinde. Komşular koşuyor — kimi nereye gittiğini bile bilmiyor. Saldırı hedefi belirsiz — bu seferkinde gece pazarı vuruldu.",
+
+      "shelter_choice_prompt": "Nereye?",
+      "choice_mosque_shelter": "Camiye sığın — orada toplanıyorlar",
+      "choice_flee_city": "Şehirden çık — uzaklaş",
+
+      "mosque_shelter": "Cami doluydu. Yaşlılar, çocuklar, anneler. İmam Kur'an okuyordu — ses titrek ama durdurmadı.\n\nOrada bir şey gördün: paniğin içinde birbirini tutan eller. Bu da bir direniş.",
+      "flee_city": "Çıktınız. Gece karanlığında, az benzinle. Hana arka koltukta uyudu — yorgunluktan.\n\nŞehrin ışıkları sönerken Hamid hiç konuşmadı.",
+
+      "network_reveal_war": "Bu bombalar nereden geliyor, kim sattı?",
+
+      "port_blockade": "Sabah. Radyo: Koalisyon, Sana'a Havalimanı'nı kalıcı kapattı. Hodeidah Limanı 'arama' bahanesiyle bloke ediliyor.\n\n70 ton tıbbi malzeme ve 51.000 ton gıda limanda bekliyor. Gemiler döndürülüyor.",
+
+      "blockade_choice_prompt": "WFP dağıtım noktasında bir kamyon gıda var. Koordinatör tutanağı imzalamanı istiyor: yardımı mahalle sakinlerine dağıtacaksın.\n\nElin titriyor ama kalem elimde.",
+      "choice_distribute_food": "İmzala — sen dağıt",
+      "choice_hoard_food": "Reddediyorum, benim ailem önce",
+
+      "distribute_food": "İmzaladın. Çarşamba günü kuyruk sabah altıdan başladı. Üç saat boyunca insanlar sessizce bekledi. Kimse itişmedi.\n\nBu açlığın içindeki onurdu.",
+      "hoard_food": "Reddediyorsun. Koparabilirsin biraz daha fazla.\n\nAma geceleri bu karar uyutmuyor seni.",
+
+      "network_reveal_famine": "Kimin çıkarına bu açlık?",
+
+      "decision_flee": "Hamid gece konuştu: 'Kalmak mümkün değil artık. Hana'nın ilerisi burada yok.'\n\nHaklı mı? Yemen, 2023 itibarıyla dünyada en büyük insani krizlerden biri olmayı sürdürüyor. 4.5 milyon yerinden edilmiş.",
+
+      "act2_end": "Kıtlık her zaman kuraklıktan gelmez. Bazen liman ablukasından, bombalı köprüden, bozulmuş yoldan gelir. Bu kıtlık seçilmiş."
+    },
+
+    "act3": {
+      "road_north": "Kuzey yolu. Marib'e. Orada görece istikrar var — petrol geliri var, IDP kampları var, WFP aktif.\n\nYol uzun, 400 kilometre. Benzin bulunan yer bulunan yer.",
+
+      "checkpoint_soldier": "Dur. Kim için çalışıyorsunuz?",
+
+      "checkpoint_choice_prompt": "Silahlı kontrol noktası. Kim oldukları belirsiz — kuzeyden güneye değişiyor.",
+      "choice_pay_passage": "Biraz para uzat, geç",
+      "choice_other_route": "Kırsal yoldan dolaş",
+
+      "pay_passage": "Para el değiştirdi. Bu yolda birkaç kez olacak bu. Her seferinde biraz daha az kalacak.",
+      "other_route": "Kıyı yolunu buldunuz. Daha uzun, engebeli. Hana hiç şikâyet etmedi — bunu fark ettin.",
+
+      "wfp_camp": "Marib IDP Kampı. 2 milyon yerinden edilmiş kişi var Yemen'de. Bu kamp bunların küçük bir parçası. Çadırlar, sıcak, toz, küçük çocukların sesi.",
+
+      "wfp_worker_speaks": "Doktor değilseniz de yardıma ihtiyacımız var. Kayıt, dağıtım, tercümanlık. Burada Aden'den, Taiz'den, Hodeidah'tan herkes var.",
+
+      "aid_choice_prompt": "Ne yaparsın?",
+      "choice_help_distribution": "Dağıtıma yardım et — hemşireliğin işine yarar",
+      "choice_rest_only": "Önce ailenle dinlen",
+
+      "help_distribution": "Üç gün kaldınız. Hemşireliğin burada çok işe yaradı — malnütrisyon taraması, anne sütü desteği.\n\nAyrılırken bir kadın elini tuttu: 'Allah razı olsun.' Söyleyebileceği tek şeydi. Yeterliydi.",
+      "rest_only": "Dinlendiniz. Hana biraz renk topladı. Hamid uyudu — günlerdir ilk kez.",
+
+      "djibouti_crossing": "Cibuti. Aden Körfezi'nin karşısı. Bazı aileler buraya geçiyor — tekneyle, ücretli.\n\nSiz Cibuti'ye değil, Marib'in kuzeyine, daha sakin bir bölgeye gidiyorsunuz. İçeride — ama savaştan biraz uzakta.",
+
+      "child_recovery": "Üç hafta sonra. Hana'nın yanakları doldu — biraz. Güldü — gerçekten.\n\nHamid iş buldu: kamyon yükleyici. Az para, ağır iş. Ama para.",
+
+      "act3_end": "━━━ BÖLÜM SONA ERDİ ━━━\n\n2023 itibarıyla Yemen savaşı 377.000'den fazla insanın hayatını aldı — çoğu doğrudan şiddet değil, açlık, hastalık ve sağlık hizmetlerine erişim yokluğundan.\n\nHodeidah Limanı ablukası 2022'de kısmen hafifletildi. Ama ülke hâlâ parçalı.\n\nArşive geç."
+    }
+  }
+}

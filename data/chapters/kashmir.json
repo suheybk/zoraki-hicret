@@ -1,0 +1,439 @@
+{
+  "id": "kashmir",
+  "title_key": "region.kashmir.name",
+  "acts": [
+    {
+      "id": "act_1_life",
+      "type": "life",
+      "entry": "srinagar_morning",
+      "nodes": [
+        {
+          "id": "srinagar_morning",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.srinagar_morning",
+          "next": "phone_dead"
+        },
+        {
+          "id": "phone_dead",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.phone_dead",
+          "next": "blackout_choice"
+        },
+        {
+          "id": "blackout_choice",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.blackout_choice_prompt",
+          "choices": [
+            {
+              "text_key": "kashmir.act1.choice_find_landline",
+              "next": "find_landline",
+              "effects": {
+                "trust": 10,
+                "morale": 5
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "found_contact",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "kashmir.act1.choice_go_to_street",
+              "next": "go_to_street",
+              "effects": {
+                "morale": 3
+              }
+            }
+          ]
+        },
+        {
+          "id": "find_landline",
+          "speaker": "neighbor",
+          "text_key": "kashmir.act1.landline_call",
+          "next": "school_closed"
+        },
+        {
+          "id": "go_to_street",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.street_scene",
+          "next": "school_closed"
+        },
+        {
+          "id": "school_closed",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.school_closed",
+          "next": "teach_choice"
+        },
+        {
+          "id": "teach_choice",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.teach_choice_prompt",
+          "choices": [
+            {
+              "text_key": "kashmir.act1.choice_teach_home",
+              "next": "teach_home",
+              "effects": {
+                "trust": 14,
+                "morale": 12
+              },
+              "solidarity": true,
+              "on_enter": {
+                "flag": {
+                  "key": "taught_children",
+                  "value": true
+                }
+              }
+            },
+            {
+              "text_key": "kashmir.act1.choice_wait_reopen",
+              "next": "wait_reopen",
+              "effects": {
+                "morale": -6
+              }
+            }
+          ]
+        },
+        {
+          "id": "teach_home",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.teach_home",
+          "next": "market_curfew"
+        },
+        {
+          "id": "wait_reopen",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.wait_reopen",
+          "next": "market_curfew"
+        },
+        {
+          "id": "market_curfew",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.market_curfew",
+          "next": "article_370"
+        },
+        {
+          "id": "article_370",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.article_370",
+          "next": "identity_question"
+        },
+        {
+          "id": "identity_question",
+          "speaker": "child",
+          "text_key": "kashmir.act1.child_asks_identity",
+          "next": "identity_choice"
+        },
+        {
+          "id": "identity_choice",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.identity_choice_prompt",
+          "choices": [
+            {
+              "text_key": "kashmir.act1.choice_tell_history",
+              "next": "tell_history",
+              "effects": {
+                "morale": 15,
+                "trust": 8
+              }
+            },
+            {
+              "text_key": "kashmir.act1.choice_stay_quiet",
+              "next": "stay_quiet",
+              "effects": {
+                "morale": -5,
+                "trust": -3
+              }
+            }
+          ]
+        },
+        {
+          "id": "tell_history",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.tell_history",
+          "next": "act1_end"
+        },
+        {
+          "id": "stay_quiet",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.stay_quiet",
+          "next": "act1_end"
+        },
+        {
+          "id": "act1_end",
+          "speaker": "narrator",
+          "text_key": "kashmir.act1.act1_end"
+        }
+      ]
+    },
+    {
+      "id": "act_2_rupture",
+      "type": "rupture",
+      "entry": "brother_arrested",
+      "nodes": [
+        {
+          "id": "brother_arrested",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.brother_arrested",
+          "on_enter": {
+            "morale": -18,
+            "trust": -8
+          },
+          "next": "psa_explained"
+        },
+        {
+          "id": "psa_explained",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.psa_explained",
+          "next": "lawyer_choice"
+        },
+        {
+          "id": "lawyer_choice",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.lawyer_choice_prompt",
+          "choices": [
+            {
+              "text_key": "kashmir.act2.choice_hire_lawyer",
+              "next": "hire_lawyer",
+              "effects": {
+                "money": -10,
+                "trust": 8,
+                "morale": 6
+              }
+            },
+            {
+              "text_key": "kashmir.act2.choice_petition",
+              "next": "petition",
+              "effects": {
+                "trust": 12,
+                "morale": 8
+              },
+              "solidarity": true
+            }
+          ]
+        },
+        {
+          "id": "hire_lawyer",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.hire_lawyer",
+          "next": "network_reveal_law"
+        },
+        {
+          "id": "petition",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.petition",
+          "next": "network_reveal_law"
+        },
+        {
+          "id": "network_reveal_law",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.network_reveal_law",
+          "network": {
+            "region": "kashmir",
+            "level": 1,
+            "highlight_nodes": [
+              "india_gov",
+              "psa_law",
+              "military_india"
+            ],
+            "highlight_edges": [
+              "india_gov→psa_law",
+              "military_india→kashmir_halk",
+              "psa_law→kashmir_halk"
+            ]
+          },
+          "next": "journalist_visit"
+        },
+        {
+          "id": "journalist_visit",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.journalist_visit",
+          "next": "journalist_choice"
+        },
+        {
+          "id": "journalist_choice",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.journalist_choice_prompt",
+          "choices": [
+            {
+              "text_key": "kashmir.act2.choice_speak_journalist",
+              "next": "speak_journalist",
+              "effects": {
+                "trust": 15,
+                "morale": 10,
+                "money": -2
+              }
+            },
+            {
+              "text_key": "kashmir.act2.choice_refuse_journalist",
+              "next": "refuse_journalist",
+              "effects": {
+                "morale": -8
+              }
+            }
+          ]
+        },
+        {
+          "id": "speak_journalist",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.speak_journalist",
+          "next": "network_reveal_silence"
+        },
+        {
+          "id": "refuse_journalist",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.refuse_journalist",
+          "next": "network_reveal_silence"
+        },
+        {
+          "id": "network_reveal_silence",
+          "type": "network_reveal",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.network_reveal_silence",
+          "network": {
+            "region": "kashmir",
+            "level": 2,
+            "highlight_nodes": [
+              "india_media",
+              "pakistan_tension",
+              "un_ignored",
+              "china_trade"
+            ],
+            "highlight_edges": [
+              "india_media→kashmir_halk",
+              "un_ignored→kashmir_halk",
+              "china_trade→india_gov"
+            ]
+          },
+          "next": "act2_end"
+        },
+        {
+          "id": "act2_end",
+          "speaker": "narrator",
+          "text_key": "kashmir.act2.act2_end"
+        }
+      ]
+    },
+    {
+      "id": "act_3_migration",
+      "type": "migration",
+      "entry": "decision_to_leave",
+      "nodes": [
+        {
+          "id": "decision_to_leave",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.decision_to_leave",
+          "next": "leave_choice"
+        },
+        {
+          "id": "leave_choice",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.leave_choice_prompt",
+          "choices": [
+            {
+              "text_key": "kashmir.act3.choice_stay_resist",
+              "next": "stay_resist",
+              "effects": {
+                "morale": 18,
+                "trust": 15,
+                "money": -3
+              },
+              "on_enter": {
+                "flag": {
+                  "key": "chose_to_stay",
+                  "value": true
+                }
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "kashmir.act3.choice_leave_valley",
+              "next": "leave_valley",
+              "effects": {
+                "morale": -10,
+                "money": 5
+              }
+            }
+          ]
+        },
+        {
+          "id": "stay_resist",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.stay_resist",
+          "next": "underground_network"
+        },
+        {
+          "id": "leave_valley",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.leave_valley",
+          "next": "delhi_arrival"
+        },
+        {
+          "id": "underground_network",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.underground_network",
+          "next": "network_choice"
+        },
+        {
+          "id": "network_choice",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.network_choice_prompt",
+          "choices": [
+            {
+              "text_key": "kashmir.act3.choice_join_network",
+              "next": "join_network",
+              "effects": {
+                "trust": 20,
+                "morale": 15
+              },
+              "solidarity": true
+            },
+            {
+              "text_key": "kashmir.act3.choice_work_alone",
+              "next": "work_alone",
+              "effects": {
+                "morale": 8
+              }
+            }
+          ]
+        },
+        {
+          "id": "join_network",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.join_network",
+          "next": "brother_contact"
+        },
+        {
+          "id": "work_alone",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.work_alone",
+          "next": "brother_contact"
+        },
+        {
+          "id": "delhi_arrival",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.delhi_arrival",
+          "next": "brother_contact"
+        },
+        {
+          "id": "brother_contact",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.brother_contact",
+          "next": "mountain_memory"
+        },
+        {
+          "id": "mountain_memory",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.mountain_memory",
+          "next": "act3_end"
+        },
+        {
+          "id": "act3_end",
+          "speaker": "narrator",
+          "text_key": "kashmir.act3.act3_end"
+        }
+      ]
+    }
+  ]
+}

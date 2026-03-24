@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <meta name="theme-color" content="#0d0b08">
+  <title>HİCRET — Zulmü İfşa Et</title>
+  <meta name="description" content="Filistin'den Doğu Türkistan'a uzanan zorla yerinden edilmeyi ve onu mümkün kılan yapıları anlatan bir tanıklık oyunu.">
+  <meta property="og:title" content="HİCRET">
+  <meta property="og:description" content="Zulmü İfşa Et. Yolculuğu Yaşa. Tanıklık Et.">
+  <!-- GitHub Pages WASM fix: SharedArrayBuffer için gerekli -->
+  <script src="coi-serviceworker.min.js"></script>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    :root{--ink:#ddd8c8;--muted:#8a8070;--faint:#4a4438;--bg:#0d0b08;--border:#2a2520;--accent:#b89a58}
+    html,body{width:100%;height:100%;background:var(--bg);color:var(--ink);font-family:Georgia,serif;overflow:hidden}
+    #loading{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg);z-index:100;transition:opacity .8s}
+    #loading.hidden{opacity:0;pointer-events:none}
+    .ld-title{font-size:clamp(36px,8vw,72px);font-weight:300;letter-spacing:.08em;margin-bottom:6px}
+    .ld-sub{font-size:clamp(11px,2vw,13px);font-style:italic;color:var(--muted);margin-bottom:44px;letter-spacing:.05em}
+    .ld-bar-wrap{width:min(320px,70vw);height:2px;background:var(--border);border-radius:1px;overflow:hidden}
+    .ld-bar{height:100%;background:var(--accent);width:0%;transition:width .3s}
+    .ld-status{margin-top:14px;font-size:11px;color:var(--faint);letter-spacing:.12em;text-transform:uppercase;font-family:'Courier New',monospace;min-height:16px}
+    .ld-quote{position:absolute;bottom:32px;font-size:clamp(10px,1.8vw,12px);color:var(--faint);font-style:italic;text-align:center;padding:0 24px;max-width:480px;line-height:1.7}
+    #game{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#000}
+    #canvas{display:none;max-width:100%;max-height:100%;image-rendering:pixelated;touch-action:none}
+    #ctrl{position:fixed;bottom:0;left:0;right:0;height:36px;background:rgba(13,11,8,.9);border-top:.5px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:10;opacity:0;transition:opacity .5s;pointer-events:none}
+    #ctrl.on{opacity:1;pointer-events:auto}
+    .ch{font-size:10px;color:var(--faint);font-family:'Courier New',monospace;letter-spacing:.08em}
+    .cb{padding:4px 12px;font-size:10px;font-family:'Courier New',monospace;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);background:transparent;border:.5px solid var(--border);border-radius:3px;cursor:pointer;transition:all .15s;margin-left:8px}
+    .cb:hover{color:var(--accent);border-color:var(--accent)}
+    #err{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:var(--bg);z-index:200;padding:24px}
+    #err.on{display:flex}
+    .eb{max-width:480px;padding:28px 32px;border:.5px solid #6a2020;border-radius:8px;background:#100808;text-align:center}
+    .et{color:#c04040;font-size:16px;margin-bottom:12px}
+    .ed{color:var(--muted);font-size:13px;line-height:1.65}
+    .ed a{color:var(--accent)}
+  </style>
+</head>
+<body>
+  <div id="loading">
+    <div class="ld-title">HİCRET</div>
+    <div class="ld-sub">Zulmü İfşa Et &nbsp;·&nbsp; Yolculuğu Yaşa &nbsp;·&nbsp; Tanıklık Et</div>
+    <div class="ld-bar-wrap"><div class="ld-bar" id="ld-bar"></div></div>
+    <div class="ld-status" id="ld-status">hazırlanıyor...</div>
+    <p class="ld-quote">"Haber programları istatistik verir;<br>oyun ise sorumluluk yükler."</p>
+  </div>
+
+  <div id="game">
+    <canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+  </div>
+
+  <div id="ctrl">
+    <span class="ch">[ S ] Ayarlar &nbsp; [ A ] Arşiv &nbsp; [ N ] Ağ &nbsp; [ R ] Sıfırla &nbsp; [ ESC ] Geri</span>
+    <div>
+      <button class="cb" onclick="goFS()">Tam Ekran</button>
+      <button class="cb" onclick="location.reload()">Yenile</button>
+    </div>
+  </div>
+
+  <div id="err">
+    <div class="eb">
+      <div class="et">Oyun Yüklenemedi</div>
+      <div class="ed">
+        WebGL veya SharedArrayBuffer desteklenmiyor olabilir.<br>
+        Chrome ya da Firefox'un güncel sürümünü deneyin.<br><br>
+        Sayfayı yenilemeyi de deneyin — servis çalışanı kurulduktan sonra sorun çözülür.<br><br>
+        <a href="https://get.webgl.org" target="_blank">WebGL desteğini kontrol et →</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var TD=0;
+    function resize(){
+      var c=document.getElementById('canvas');
+      if(!c||c.style.display==='none')return;
+      var W=window.innerWidth,H=window.innerHeight-36,r=16/9,cw,ch;
+      if(W/H>r){ch=H;cw=ch*r}else{cw=W;ch=cw/r}
+      c.style.width=Math.floor(cw)+'px';c.style.height=Math.floor(ch)+'px';
+    }
+    window.addEventListener('resize',resize);
+    function goFS(){
+      var el=document.documentElement;
+      if(!document.fullscreenElement)(el.requestFullscreen||el.webkitRequestFullscreen||function(){})(el);
+      else(document.exitFullscreen||document.webkitExitFullscreen||function(){})();
+    }
+    document.addEventListener('fullscreenchange',resize);
+    window.addEventListener('keydown',function(e){if([32,37,38,39,40].indexOf(e.keyCode)>-1)e.preventDefault();},{passive:false});
+    document.addEventListener('touchmove',function(e){if(e.target.id==='canvas')e.preventDefault();},{passive:false});
+    document.addEventListener('gesturestart',function(e){e.preventDefault();});
+    function showGame(){
+      var c=document.getElementById('canvas'),ls=document.getElementById('loading'),ctrl=document.getElementById('ctrl');
+      c.style.display='block';resize();
+      setTimeout(function(){ls.classList.add('hidden');ctrl.classList.add('on');setTimeout(function(){ls.style.display='none';},800);},300);
+    }
+    function setStatus(text){
+      var st=document.getElementById('ld-status'),bar=document.getElementById('ld-bar');
+      if(!text&&Module.remainingDependencies===0){showGame();return;}
+      var tr={'Downloading...':'indiriliyor...','All downloads complete.':'yüklendi','Running...':'başlatılıyor...'};
+      st.textContent=tr[text]||text.toLowerCase().replace('preparing...','hazırlanıyor...');
+      var m=text.match(/\((\d+)\/(\d+)\)/);
+      if(m)bar.style.width=(parseInt(m[1])/parseInt(m[2])*100)+'%';
+    }
+    var Module={
+      arguments:['./game.love'],
+      INITIAL_MEMORY:67108864,
+      printErr:console.error.bind(console),
+      canvas:(function(){
+        var c=document.getElementById('canvas');
+        c.addEventListener('webglcontextlost',function(e){document.getElementById('err').classList.add('on');e.preventDefault();},false);
+        return c;
+      })(),
+      setStatus:setStatus,
+      totalDependencies:0,remainingDependencies:0,
+      monitorRunDependencies:function(left){
+        TD=Math.max(TD,left);
+        Module.setStatus(left?'Preparing... ('+(TD-left)+'/'+TD+')':'All downloads complete.');
+      }
+    };
+    Module.setStatus('Downloading...');
+    window.onerror=function(){
+      Module.setStatus('Hata oluştu — sayfayı yenileyin veya Chrome/Firefox kullanın');
+      Module.setStatus=function(t){if(t)console.error(t);};
+    };
+    function applicationLoad(){Love(Module);}
+  </script>
+  <script type="text/javascript" src="game.js"></script>
+  <script async type="text/javascript" src="love.js" onload="applicationLoad()"></script>
+</body>
+</html>

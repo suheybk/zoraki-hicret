@@ -1,0 +1,97 @@
+{
+  "kashmir": {
+    "act1": {
+      "srinagar_morning": "Srinagar, Keşmir. Ağustos 2019.\n\nAdın Tariq. Öğretmensin — tarih ve edebiyat. Karın Dilnoza evde, annen yaşlı. 5 Ağustos'tan bu yana okullar kapalı, dışarı çıkış kısıtlı.\n\nHindistan hükümeti bu sabah 35A ve 370. Maddeleri yürürlükten kaldırdı. Keşmir'in özel statüsü bitti. Kimse sormadı.",
+
+      "phone_dead": "Telefon yok. İnternet yok. Landline'ların büyük kısmı kesildi.\n\nDünyanın en uzun kesintisi olacak bu — 213 gün boyunca 4G internet yasaklı kalacak. Şu an 5. gün.",
+
+      "blackout_choice_prompt": "Annenin haberi yok — içeride hasta. Srinagar'ın öteki yakasındaki kardeşinden haber alamıyorsun. Ne yaparsın?",
+      "choice_find_landline": "Çarşıdaki esnaf belki sabit hat bilir — oraya git",
+      "choice_go_to_street": "Çık dışarı, ne olduğunu gözlemle",
+
+      "landline_call": "Esnaf sizi bir ahize başına getirdi. Bağlandı — kardeşin cevap verdi. 'İyiyiz' dedi. İki saniye. Hat kesildi.\n\nİki saniye. Bir haftadır beklenen bilgi.",
+      "street_scene": "Sokak. Askeri araçlar, tel örgüler, sessizlik. Dükkanlar yarı kapalı. Birkaç kişi hızla yürüyor — kimse göz göze gelmiyor.\n\nBu sessizlik öfkeden mi, korkudan mı yoksa yorgunluktan mı? Hepsi.",
+
+      "school_closed": "Okullar kapalı. 'Güvenlik gerekçesiyle.' Mahallede onlarca çocuk evde, kitap yok, ders yok.\n\nHindistan'ın atadığı vali 'normalleşme sürecinde' diyor. Çocuklar penceresinden askeri konvoy seyrediyor.",
+
+      "teach_choice_prompt": "Elimde ders kitapları var. Komşu aileler kapıma gelirse öğretebilirim. Risk var — izinsiz toplanma kısıtlaması var.",
+      "choice_teach_home": "Evde ders ver — ne olursa olsun",
+      "choice_wait_reopen": "Okullar açılana kadar bekle",
+
+      "teach_home": "Sabahları beş çocuk geldi. Tarih okudular — Keşmir'in tarihi, Mughal dönemi, bağımsızlık hareketi. Kitapta olmayan kısımları da anlattın.\n\nBilgiyi kuşatamıyorlar.",
+      "wait_reopen": "Bekliyorsun. Okullar yeniden açılıyor mu? İki ay daha kapalı kalacak.",
+
+      "market_curfew": "Sokağa çıkma yasası saatleri değişiyor — bazen sabah 7-10, bazen yok. Belirsizlik bir kontrol biçimi.\n\nPazardan market yapmak için fırsat kollamak gerekiyor. Taze sebze yok, kutu konserve biriktirenler şanslı.",
+
+      "article_370": "35A ve 370. Madde ne anlama geliyordu? Keşmir'in kendi anayasası vardı, kendi bayrağı, dışarıdan arazi alımına kısıtlama.\n\nBunlar kaldırıldı. Artık Hindistan vatandaşları burada arazi alabilir. 'Demografik mühendislik' diyenler bu yüzden diyor.",
+
+      "child_asks_identity": "Baba, biz ne zaman normal olacağız?",
+
+      "identity_choice_prompt": "Çocuğun 'normal' derken ne anladığını biliyorsun — telefon, okul, dışarı çıkmak. Ama bu sorunun içinde daha büyük bir şey var.",
+      "choice_tell_history": "Anlat: Keşmir'in tarihi, mücadelesi, kimliği",
+      "choice_stay_quiet": "Şimdi değil — tehlikeli bir konu",
+
+      "tell_history": "Anlattın. Dal Gölü'nü, Şeyh Abdullah'ı, 1947'yi, plebisit vaadini, iki büyük gücün arasında sıkışan bir halkın hikâyesini.\n\nÇocuk dinledi. Sonra dedi: 'Peki biz kazanacak mıyız?'\n\n'Kazanmak' kelimesinin ne anlama geldiğini düşündün.",
+      "stay_quiet": "Sessiz kaldın. Belki daha güvenli. Ama o soru havada asılı kaldı.",
+
+      "act1_end": "Keşmir'de 8 milyon insan yaşıyor. 2019 yazında dünyada en yoğun askeri varlıklardan birine ev sahipliği yaptı.\n\nBu sayılar biliniyor. Ama içeride ne hissedildiğini ancak bu evden anlayabilirsin."
+    },
+
+    "act2": {
+      "brother_arrested": "Kardeşin Rahul gözaltına alındı.\n\n'Kamu Düzeni Yasası' — PSA. Suçlama yok, delil yok, mahkeme yok. İki yıla kadar gözaltı. Avukat hakkı kısıtlı.",
+
+      "psa_explained": "PSA (Public Safety Act), 1978'de ahşap korsanlığına karşı çıkarılmıştı. Sonra genişletildi. Keşmir'de binlerce kişiye uygulandı.\n\nRahul'un suçu: 'Kargaşaya zemin hazırlayabilecek faaliyetler.' Somut eylem yok. Potansiyel yeterli.",
+
+      "lawyer_choice_prompt": "Rahul'u kurtarmak için ne yapabilirsin?",
+      "choice_hire_lawyer": "Avukat tut — masraflı ama yasal yol",
+      "choice_petition": "Dilekçe topla — komşularla imza kampanyası",
+
+      "hire_lawyer": "Avukat bulundu — Srinagar'da insan hakları davaları üzerine çalışıyor. Para istedi, ödedi.\n\n'PSA davalarında başarı oranı düşük,' dedi doğrudan. 'Ama sessiz kalmaktan iyi.'",
+      "petition": "Kâğıtları çıkardın. Komşular kapıya geldi — bir kısmı imzaladı, bir kısmı korku gözleriyle geri çekildi. İkisi de anlaşılır.\n\nElli imza toplandı. Bunun ne yapacağını bilmiyorsun. Ama ellerin titremiyordu.",
+
+      "network_reveal_law": "Bu yasa neden var, kime hizmet ediyor?",
+
+      "journalist_visit": "Bir gazeteci geldi — Delhi'den. Yabancı basından biri. Rahul'un hikâyesini yazmak istiyor.\n\n'Uluslararası kamuoyuna ulaşırsa baskı artar' diyor. Haklı olabilir. Ya da ters teper.",
+
+      "journalist_choice_prompt": "Konuşacak mısın?",
+      "choice_speak_journalist": "Konuş — dünya duysun",
+      "choice_refuse_journalist": "Reddet — güvenlik riski taşıyor",
+
+      "speak_journalist": "Konuştun. Bir saat. Rahul'u anlattın, PSA'yı anlattın, 213 günü anlattın.\n\nHaber çıktı — İngilizce, Almanca versiyonları paylaşıldı. Rahul iki ay sonra serbest bırakıldı. Bağlantı kurulmaz resmi olarak. Ama zamanlaması tesadüf değil.",
+      "refuse_journalist": "Reddettin. Gazeteci anlayışla ayrıldı.\n\nRahul altı ay daha kaldı içeride.",
+
+      "network_reveal_silence": "Dünya neden duymuyor bunu?",
+
+      "act2_end": "Keşmir meselesinde üç nükleer güç var — Hindistan, Pakistan, Çin. Hepsinin çıkarı farklı. Ve ortada 8 milyon insan.\n\nUluslararası hukuk çözüm üretemiyor. Plebisit vaadi 1948'den bu yana yerine getirilmedi."
+    },
+
+    "act3": {
+      "decision_to_leave": "Altı ay geçti. Rahul serbest — ama kırılmış. Dilnoza'nın ailesi Delhi'ye gitmemizi söylüyor. 'Orada nefes alırsınız' diyor.\n\nGitmek mi, kalmak mı? Bu kez gerçekten düşünüyorsun.",
+
+      "leave_choice_prompt": "Ne yapacaksın?",
+      "choice_stay_resist": "Kal ve direniş ağına katıl — öğretmen olarak",
+      "choice_leave_valley": "Vadiden çık — ailenle daha güvenli bir yer bul",
+
+      "stay_resist": "Kaldın. Bu karar her şeyi değiştirdi.\n\nEv dersleri devam etti. Keşmir tarihini yazan yazarlara ulaştın, el yazması metinleri bir arşiv grubuna verdin. Küçük eylemler. Ama küçük değiller.",
+
+      "leave_valley": "Yola çıktın. Srinagar'dan son geçiş. Dağlar ardında kaldı.\n\nDilnoza ağlamadı — biliyordu ağlarsanız duraksayacaksınız. Sadece tuttu elini.",
+
+      "underground_network": "Bir grup var — öğretmenler, avukatlar, gazeteciler. Sansürlenen bilgiyi dağıtıyorlar. Gözaltı listelerini takip ediyorlar. Kayıp ailelere haber ulaştırıyorlar.",
+
+      "network_choice_prompt": "Bu ağa dahil olacak mısın?",
+      "choice_join_network": "Katıl — bu direniş biçimi",
+      "choice_work_alone": "Kendi başına çalış — bağlantı riski azaltır",
+
+      "join_network": "Katıldın. İlk haftada bir öğretmenin yerini öğrendin — altı aydır kayıp. Ailesine ilettiniz.\n\nBu bir zafer gibi geldi. Sonra bir sonraki isim geldi. Uzun bir liste.",
+      "work_alone": "Yalnız çalıştın. Rahul'un davası belgelerini bir arşivde muhafaza ettiniz. Belki yıllar sonra işe yarar.",
+
+      "delhi_arrival": "Delhi. Büyük şehir, kalabalık, gürültülü. Keşmir'den birçok aile burada — iç göçmen, resmi statü yok.\n\nKira pahalı. Tarihçi kimliğin burada işe yaramıyor. Ama en azından telefon var.",
+
+      "brother_contact": "Rahul aradı. Sesi eskisinden farklı — ağır ama kırılmamış.\n\n'Buradasın, bu iyi,' dedi. 'Ama unutma oraya da döneceğiz.'\n\nSormadın ne zaman.",
+
+      "mountain_memory": "Geceleri pencereden bakan Dilnoza bir gece dedi: 'Himalayalar burada farklı görünüyor. Sanki daha uzak.'\n\nSen de baktın. Haklıydı. Aynı dağlar ama mesafe farklı. Bir şeyin içinden değil, dışından bakıyorsun artık.\n\nBu farkı hissetmek — bu da bir kayıp.",
+
+      "act3_end": "━━━ BÖLÜM SONA ERDİ ━━━\n\n2019'dan bu yana Keşmir'de 2.000'den fazla kişi PSA kapsamında gözaltına alındı. Pek çoğu suçlanmadan serbest bırakıldı.\n\n2023 itibarıyla 4G internet kısmi olarak geri döndü. Bölge hâlâ Hindistan'ın doğrudan yönetiminde.\n\n1948'deki BM Kararı ile taahhüt edilen plebisit gerçekleşmedi. Gündemdeki yerini koruyor.\n\nArşive geç."
+    }
+  }
+}
