@@ -51,6 +51,29 @@ jobs:
           love.js hicret.love dist --title "Hicret" --memory 67108864
           ls -lh dist/
 
+      - name: Patch for single-threaded mode (GitHub Pages compat)
+        run: |
+          cd dist
+          # love.js pthread worker'larını devre dışı bırak
+          # Worker oluşturma çağrısını güvenli no-op ile değiştir
+          if [ -f love.worker.js ]; then
+            echo "Pthread build algılandı — uyumluluk yaması uygulanıyor..."
+            # love.js içinde PTHREAD_POOL_SIZE'ı 0'a zorla
+            sed -i 's/PTHREAD_POOL_SIZE=[0-9]*/PTHREAD_POOL_SIZE=0/g' love.js || true
+            # Worker oluşturmayı devre dışı bırakacak shim ekle
+            cat > worker-shim.js << 'SHIM'
+            // GitHub Pages pthread uyumluluk shim'i
+            (function(){
+              if(typeof Module!=='undefined'){
+                Module.PTHREAD_POOL_SIZE=0;
+              }
+            })();
+            SHIM
+            echo "Yama tamamlandı"
+          fi
+          ls -lh
+          cd ..
+
       - name: Apply custom web files
         run: |
           cp web/index.html dist/index.html
