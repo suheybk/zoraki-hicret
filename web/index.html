@@ -8,8 +8,7 @@
   <meta name="description" content="Filistin'den Doğu Türkistan'a uzanan zorla yerinden edilmeyi ve onu mümkün kılan yapıları anlatan bir tanıklık oyunu.">
   <meta property="og:title" content="HİCRET">
   <meta property="og:description" content="Zulmü İfşa Et. Yolculuğu Yaşa. Tanıklık Et.">
-  <!-- GitHub Pages WASM fix: SharedArrayBuffer için gerekli -->
-  <script src="coi-serviceworker.min.js"></script>
+  <!-- love.js compatibility mode: SharedArrayBuffer gerekmez -->
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     :root{--ink:#ddd8c8;--muted:#8a8070;--faint:#4a4438;--bg:#0d0b08;--border:#2a2520;--accent:#b89a58}
@@ -105,7 +104,6 @@
     var Module={
       arguments:['./game.love'],
       INITIAL_MEMORY:67108864,
-      PTHREAD_POOL_SIZE:0,
       printErr:console.error.bind(console),
       canvas:(function(){
         var c=document.getElementById('canvas');
@@ -125,45 +123,8 @@
       Module.setStatus=function(t){if(t)console.error(t);};
     };
     function applicationLoad(){Love(Module);}
-
-    // SharedArrayBuffer / Cross-Origin Isolation kontrolü
-    // COI service worker ilk ziyarette kurulur, sayfa yenilenmesi gerekir.
-    // love.js'i yalnızca izolasyon sağlandığında yükle.
-    (function(){
-      var st=document.getElementById('ld-status');
-      if(window.crossOriginIsolated){
-        // İzolasyon aktif — oyunu yükle
-        var gs=document.createElement('script');
-        gs.src='game.js';
-        gs.onload=function(){
-          var ls=document.createElement('script');
-          ls.src='love.js';
-          ls.async=true;
-          ls.onload=function(){applicationLoad();};
-          document.body.appendChild(ls);
-        };
-        document.body.appendChild(gs);
-      } else {
-        // SW henüz aktif değil — kurulmasını bekle, sonra yenile
-        if(st) st.textContent='servis çalışanı kuruluyor...';
-        // SW controllerchange olayını dinle
-        if(navigator.serviceWorker){
-          navigator.serviceWorker.ready.then(function(){
-            // SW aktif ama sayfa henüz kontrol altında değil — yenile
-            if(!window.crossOriginIsolated){
-              setTimeout(function(){location.reload();},500);
-            }
-          });
-          // Yedek: 3 saniye sonra yine dene
-          setTimeout(function(){
-            if(!window.crossOriginIsolated) location.reload();
-          },3000);
-        } else {
-          // Service worker desteği yok
-          if(st) st.textContent='tarayıcınız bu oyunu desteklemiyor — Chrome veya Firefox kullanın';
-        }
-      }
-    })();
   </script>
+  <script type="text/javascript" src="game.js"></script>
+  <script async type="text/javascript" src="love.js" onload="applicationLoad()"></script>
 </body>
 </html>

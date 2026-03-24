@@ -30,10 +30,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install love.js (non-pthread version)
+      - name: Install love.js (Davidobot fork)
         run: |
-          npm install -g love.js@0.9.0 || npm install -g love.js
-          echo "love.js version: $(love.js --version 2>/dev/null || echo unknown)"
+          npm install -g love.js
+          echo "love.js installed"
 
       - name: Create .love package
         run: |
@@ -48,33 +48,17 @@ jobs:
             --exclude "build_web/*"
           echo "Package size: $(du -sh hicret.love | cut -f1)"
 
-      - name: Build with love.js
+      - name: Build with love.js (compatibility/single-threaded mode)
         run: |
-          love.js hicret.love dist --title "Hicret" --memory 67108864
+          love.js hicret.love dist -c --title "Hicret" --memory 67108864
+          echo "=== Build output ==="
           ls -lh dist/
-
-      - name: Ensure single-threaded compatibility
-        run: |
-          cd dist
-          if [ -f love.worker.js ]; then
-            echo "=== Pthread build detected ==="
-            echo "Patching love.js to stub out Worker creation..."
-            # Replace 'new Worker(' with a stub that returns a fake worker
-            node -e "
-              const fs = require('fs');
-              let src = fs.readFileSync('love.js', 'utf8');
-              // Inject worker stub at the very beginning
-              const stub = '(function(){var _W=self.Worker;self.Worker=function(u,o){var w=new EventTarget();w.postMessage=function(){};w.terminate=function(){};w.onmessage=null;return w;};})();';
-              src = stub + src;
-              fs.writeFileSync('love.js', src);
-              console.log('Worker stub injected');
-            "
-            echo "Patch complete"
+          echo "=== Worker check ==="
+          if [ -f dist/love.worker.js ]; then
+            echo "WARNING: love.worker.js found (pthread build)"
           else
-            echo "No pthread build — no patching needed"
+            echo "OK: No love.worker.js (single-threaded build)"
           fi
-          ls -lh
-          cd ..
 
       - name: Apply custom web files
         run: |
