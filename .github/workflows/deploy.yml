@@ -24,47 +24,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          lfs: true
 
-      - name: Install love.js (Davidobot fork)
+      - name: Verify web build files
         run: |
-          npm install -g love.js
-          echo "love.js installed"
-
-      - name: Create .love package
-        run: |
-          zip -9 -r hicret.love . \
-            --exclude ".git/*" \
-            --exclude ".github/*" \
-            --exclude "web/*" \
-            --exclude "*.sh" \
-            --exclude "*.zip" \
-            --exclude "*.love" \
-            --exclude "*.md" \
-            --exclude "build_web/*"
-          echo "Package size: $(du -sh hicret.love | cut -f1)"
-
-      - name: Build with love.js (compatibility/single-threaded mode)
-        run: |
-          love.js hicret.love dist -c --title "Hicret" --memory 67108864
-          echo "=== Build output ==="
-          ls -lh dist/
-          echo "=== Worker check ==="
-          if [ -f dist/love.worker.js ]; then
-            echo "WARNING: love.worker.js found (pthread build)"
-          else
-            echo "OK: No love.worker.js (single-threaded build)"
-          fi
-
-      - name: Apply custom web files
-        run: |
-          cp web/index.html dist/index.html
-          cp web/coi-serviceworker.min.js dist/coi-serviceworker.min.js
-          echo "Custom files applied"
+          echo "=== Web build files ==="
+          ls -lh web/
+          for f in index.html love.js love.wasm game.js game.data; do
+            if [ ! -f "web/$f" ]; then
+              echo "MISSING: web/$f"
+              exit 1
+            fi
+          done
+          echo "All required files present"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -72,7 +45,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/
+          path: web/
 
       - name: Deploy to GitHub Pages
         id: deploy

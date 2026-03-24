@@ -19,3 +19,5 @@ playtest_log.json
 
 # LÖVE kayıt dosyaları
 save.json
+web/*.wasm
+web/*.data
