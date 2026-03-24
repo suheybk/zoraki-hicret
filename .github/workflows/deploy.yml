@@ -30,8 +30,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install love.js
-        run: npm install -g love.js
+      - name: Install love.js (non-pthread version)
+        run: |
+          npm install -g love.js@0.9.0 || npm install -g love.js
+          echo "love.js version: $(love.js --version 2>/dev/null || echo unknown)"
 
       - name: Create .love package
         run: |
@@ -51,14 +53,25 @@ jobs:
           love.js hicret.love dist --title "Hicret" --memory 67108864
           ls -lh dist/
 
-      - name: Patch for single-threaded mode (GitHub Pages compat)
+      - name: Ensure single-threaded compatibility
         run: |
           cd dist
           if [ -f love.worker.js ]; then
-            echo "Pthread build detected — patching..."
-            sed -i 's/PTHREAD_POOL_SIZE=[0-9]*/PTHREAD_POOL_SIZE=0/g' love.js || true
-            echo '(function(){if(typeof Module!=="undefined"){Module.PTHREAD_POOL_SIZE=0;}})();' > worker-shim.js
-            echo "Patch done"
+            echo "=== Pthread build detected ==="
+            echo "Patching love.js to stub out Worker creation..."
+            # Replace 'new Worker(' with a stub that returns a fake worker
+            node -e "
+              const fs = require('fs');
+              let src = fs.readFileSync('love.js', 'utf8');
+              // Inject worker stub at the very beginning
+              const stub = '(function(){var _W=self.Worker;self.Worker=function(u,o){var w=new EventTarget();w.postMessage=function(){};w.terminate=function(){};w.onmessage=null;return w;};})();';
+              src = stub + src;
+              fs.writeFileSync('love.js', src);
+              console.log('Worker stub injected');
+            "
+            echo "Patch complete"
+          else
+            echo "No pthread build — no patching needed"
           fi
           ls -lh
           cd ..
