@@ -40,23 +40,30 @@ end
 
 --- Kaydı yükle (yoksa varsayılan oluştur)
 function SaveSystem.load()
-  local raw = love.filesystem.read(SAVE_FILE)
-  if raw then
+  local ok_read, raw = pcall(love.filesystem.read, SAVE_FILE)
+  if ok_read and type(raw) == "string" and #raw > 0 then
     local ok, parsed = pcall(json.decode, raw)
-    if ok and parsed and parsed.version == SAVE_VERSION then
+    if ok and type(parsed) == "table" and parsed.version == SAVE_VERSION then
       _data = parsed
       return _data
     end
   end
   _data = _default()
+  -- Web ortamında ilk kayıt oluşturma da başarısız olabilir
+  pcall(SaveSystem.save)
   return _data
 end
 
 --- Kaydı diske yaz
 function SaveSystem.save()
-  assert(_data, "Önce SaveSystem.load() çağrılmalı")
-  local raw = json.encode(_data)
-  love.filesystem.write(SAVE_FILE, raw)
+  if not _data then return false end
+  local ok_enc, raw = pcall(json.encode, _data)
+  if not ok_enc then return false end
+  local ok_wr, err = pcall(love.filesystem.write, SAVE_FILE, raw)
+  if not ok_wr then
+    print("[Save] Yazma hatası: " .. tostring(err))
+  end
+  return ok_wr
 end
 
 --- Belleğe yaz + diske kaydet
